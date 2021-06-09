@@ -11,3 +11,4 @@ $manager= new ConnexionManager($GLOBALS["hostname"] , $GLOBALS["username"] , $GL
 
 echo $manager->dbPDO;
 
+echo "bonjour";
