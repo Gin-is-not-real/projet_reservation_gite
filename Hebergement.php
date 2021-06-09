@@ -1,16 +1,16 @@
 <?php 
 
 class Hebergement {
-    public $id;
-    public $intitule;
-    public $categorie;
-    public $description;
-    public $photo;                                                                             
-    public $nb_lits;
-    public $nb_sdb;
-    public $localisation;
-    public $prix;
-    public $disponibilite;
+    private $id;
+    private $intitule;
+    private $categorie;
+    private $description;
+    private $photo;                                                                             
+    private $nb_lits;
+    private $nb_sdb;
+    private $localisation;
+    private $prix;
+    private $disponibilite;
     
     public function __construct($id, $intitule, $categorie, $description, $photo, $nb_lits, $nb_sdb, $localisation, $prix, $disponibilite) {
         $this->id = $id;
@@ -96,3 +96,4 @@ class Hebergement {
         $this->disponibilite=$disponibilite;
     }
 }
+    
