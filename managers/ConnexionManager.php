@@ -61,5 +61,17 @@ class ConnexionManager {
 }
 
 class  HebergementManager extends ConnexionManager {
-    
+    protected $tablename;
+
+    function __construct($hostname, $username, $password, $basename,$tablename) {
+        parent::__construct($hostname, $username, $password, $basename);
+        $this->tablename=$tablename;
+    }
+    public function getTablename() {
+        return $this->tablename;
+    }
+
+    public function setTablename() {
+        $this->tablename=$tablename;
+    }
 }

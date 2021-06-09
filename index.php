@@ -5,10 +5,10 @@ $GLOBALS["hostname"]= "localhost";
 $GLOBALS["username"]= "root";
 $GLOBALS["password"]= '';
 $GLOBALS["basename"]= "projet_gites";
+$GLOBALS["tablename"]= "hebergements";
 
-$manager= new ConnexionManager($GLOBALS["hostname"] , $GLOBALS["username"] , $GLOBALS["password"] , $GLOBALS["basename"] );
+$manager= new HebergementManager($GLOBALS["hostname"] , $GLOBALS["username"] , $GLOBALS["password"] , $GLOBALS["basename"] , $GLOBALS["tablename"]);
 
 
-echo $manager->dbPDO;
+echo $manager->getTablename();
 
-echo "bonjour";
