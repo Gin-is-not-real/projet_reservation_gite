@@ -117,4 +117,39 @@ class  HebergementManager extends ConnexionManager {
         $this->tablename=$tablename;
     }
 
+    public function addReservations($idHebergement, $dateOccupation, $dateLiberation) {
+        try {
+            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation) VALUES (:id_hebergement, :date_occupation, :date_liberation)");
+            $reponse = $req->execute(array(
+                "id_hebergement" => $idHebergement,
+                "date_occupation" => $dateOccupation,
+                "date_liberation" => $dateLiberation,
+               
+            ));
+        }
+        catch (Exception $e) {
+            die('erreur on add: ' . $e->getMessage() );
+        }
+        return $reponse; 
+    }
+
+    public function deleteReservations($idReservation) {
+        $this->dbPDO->exec("DELETE FROM $this->tablename WHERE id_reservation=" . $idReservation);
+    }
+
+    public function updateReservations($idReservation) {
+        try {
+            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET id_hebergement=:id_hebergement, date_occupation=:date_occupation, date_liberation=:date_liberation "); 
+            
+            $reponse = $req->execute(array(
+                "id_hebergement" => $_POST['id_hebergement'],
+                "date_occupation" => $_POST['date_occupation'],
+                "date_liberation" => $_POST['date_liberation'],
+                
+            ));
+        }
+        catch (Exception $e) {
+            die('erreur on update: ' . $e->getMessage() );
+        }
+    }
 }
