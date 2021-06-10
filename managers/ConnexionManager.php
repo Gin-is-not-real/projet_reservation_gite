@@ -105,15 +105,15 @@ class  HebergementManager extends ConnexionManager {
             $req = $this->dbPDO->prepare("UPDATE $this->tablename SET intitule=:intitule, categorie=:categorie, description=:description, photo=:photo, nb_lits=:nb_lits, nb_sdb=:nb_sdb, localisation=:localisation, prix=:prix, disponibilite=:disponibilite WHERE id_hebergement =$id"); 
             
             $reponse = $req->execute(array(
-                "intitule" => $intitule,
-                "categorie" => $categorie,
-                "description" => $description,
-                "photo" => $photo,
-                "nb_lits" => $nbLits,
-                "nb_sdb" => $nbSdb,
-                "localisation" => $localisation,
-                "prix" => $prix,
-                "disponibilite" => $disponibilite
+                "intitule" => $_POST['intitule'],
+                "categorie" => $_POST['categorie'],
+                "description" => $_POST['description'],
+                "photo" => $_POST['photo'],
+                "nb_lits" => $_POST['nbLits'],
+                "nb_sdb" => $_POST['nbSdb'],
+                "localisation" => $_POST['localisation'],
+                "prix" => $_POST['prix'],
+                "disponibilite" => $_POST['disponibilite']
             ));
         }
         catch (Exception $e) {
@@ -122,9 +122,57 @@ class  HebergementManager extends ConnexionManager {
     }
 
 
+}
 
 
+class ReservationsManager extends ConnexionManager {
+    protected $tablename;
 
+    function __construct($hostname, $username, $password, $basename,$tablename) {
+        parent::__construct($hostname, $username, $password, $basename);
+        $this->tablename=$tablename;
+    }
+    public function getTablenameresa() {
+        return $this->tablename;
+    }
 
+    public function setTablenameresa() {
+        $this->tablename=$tablename;
+    }
 
+    public function addReservations($idHebergement, $dateOccupation, $dateLiberation) {
+        try {
+            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation) VALUES (:id_hebergement, :date_occupation, :date_liberation)");
+            $reponse = $req->execute(array(
+                "id_hebergement" => $idHebergement,
+                "date_occupation" => $dateOccupation,
+                "date_liberation" => $dateLiberation,
+               
+            ));
+        }
+        catch (Exception $e) {
+            die('erreur on add: ' . $e->getMessage() );
+        }
+        return $reponse; 
+    }
+
+    public function deleteReservations($idReservation) {
+        $this->dbPDO->exec("DELETE FROM $this->tablename WHERE id_reservation=" . $idReservation);
+    }
+
+    public function updateReservations($idReservation) {
+        try {
+            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET id_hebergement=:id_hebergement, date_occupation=:date_occupation, date_liberation=:date_liberation "); 
+            
+            $reponse = $req->execute(array(
+                "id_hebergement" => $_POST['id_hebergement'],
+                "date_occupation" => $_POST['date_occupation'],
+                "date_liberation" => $_POST['date_liberation'],
+                
+            ));
+        }
+        catch (Exception $e) {
+            die('erreur on update: ' . $e->getMessage() );
+        }
+    }
 }
