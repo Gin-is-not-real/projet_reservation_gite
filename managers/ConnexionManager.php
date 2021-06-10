@@ -1,5 +1,4 @@
 <?php
-
 class ConnexionManager {
     protected $hostname;
     protected $username;
@@ -52,7 +51,6 @@ class ConnexionManager {
         $this->basename=$basename;
     }
 }
-
 //////////////////////////////////////////////////////////// 
 class  HebergementManager extends ConnexionManager {
     protected $tablename;
@@ -62,6 +60,26 @@ class  HebergementManager extends ConnexionManager {
         $this->tablename=$tablename;
     }
     
+    public function getHebergement($id) {
+        try {
+            $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE id_hebergement=" . $id);
+        }
+        catch (Exception $e) {
+            die('erreur on list: ' . $e->getMessage());
+        }
+        return $req;
+    }
+
+    public function listHebergements() {
+        try {
+            $req = $this->dbPDO->query('SELECT * FROM $this->tablename ORDER BY id_hebergement DESC');
+        }
+        catch (Exception $e) {
+            die('erreur on list: ' . $e->getMessage());
+        }
+        return $req;
+    }
+
     public function addHebergement($intitule, $categorie, $description, $photo, $nbLits, $nbSdb, $localisation, $prix, $disponibilite) {
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix, disponibilite) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix, :disponibilite)");
@@ -107,6 +125,13 @@ class  HebergementManager extends ConnexionManager {
             die('erreur on update: ' . $e->getMessage() );
         }
     }
+
+    public function getTablename() {
+        return $this->tablename;
+    }
+    public function setTablename() {
+        $this->tablename=$tablename;
+    }
 }
 
 //////////////////////////////////////////////////////////// 
@@ -115,13 +140,6 @@ class ReservationsManager extends ConnexionManager {
 
     function __construct($hostname, $username, $password, $basename,$tablename) {
         parent::__construct($hostname, $username, $password, $basename);
-        $this->tablename=$tablename;
-    }
-    public function getTablenameresa() {
-        return $this->tablename;
-    }
-
-    public function setTablenameresa() {
         $this->tablename=$tablename;
     }
 
@@ -160,4 +178,13 @@ class ReservationsManager extends ConnexionManager {
             die('erreur on update: ' . $e->getMessage() );
         }
     }
+
+    public function getTablenameresa() {
+        return $this->tablename;
+    }
+    public function setTablenameresa() {
+        $this->tablename=$tablename;
+    }
 }
+
+

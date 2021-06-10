@@ -11,16 +11,32 @@ class Hebergement {
     private $prix;
     private $disponibilite;
     
-    public function __construct($id, $intitule, $categorie, $description, $photo, $nb_lits, $nb_sdb, $localisation, $prix, $disponibilite) {
-        $this->id = $id;
-        $this->intitule = $intitule;
-        $this->categorie = $categorie;
-        $this->description = $description;
-        $this->nb_lits = $nb_lits;
-        $this->nb_sdb = $nb_sdb;
-        $this->localisation = $localisation;
-        $this->prix = $prix;
-        $this->disponibilite = $disponibilite;
+    // public function __construct($id, $intitule, $categorie, $description, $photo, $nb_lits, $nb_sdb, $localisation, $prix, $disponibilite) {
+    //     $this->id = $id;
+    //     $this->intitule = $intitule;
+    //     $this->categorie = $categorie;
+    //     $this->description = $description;
+    //     $this->nb_lits = $nb_lits;
+    //     $this->nb_sdb = $nb_sdb;
+    //     $this->localisation = $localisation;
+    //     $this->prix = $prix;
+    //     $this->disponibilite = $disponibilite;
+    // }
+
+    public function __construct($values) {
+        $this->id = $values['id_hebergement'];
+        $this->intitule = $values['intitule'];
+        $this->categorie = $values['categorie'];
+        $this->description = $values['description'];
+        $this->nb_lits = $values['nb_lits'];
+        $this->nb_sdb = $values['nb_sdb'];
+        $this->localisation = $values['localisation'];
+        $this->prix = $values['prix'];
+        $this->disponibilite = $values['disponibilite'];
+    }
+
+    public function describe() {
+        echo 'id: ' . $this->id . ', intitulé: ' . $this->intitule . ', categorie: ' . $this->categorie . ' description: ' . $this->nb_lits . '<br>';
     }
 
     public function getId() {
