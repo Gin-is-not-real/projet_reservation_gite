@@ -1,7 +1,11 @@
+body {
+    --orange: rgb(244, 84, 21);
+    --grey-card: #D7D7D7;
+}
+
 html * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 

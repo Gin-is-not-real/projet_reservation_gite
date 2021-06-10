@@ -25,7 +25,7 @@ while($data = $heb->fetch()) {
 
     <div class="card-content">
         <figure>
-            <img src="../static/img/pexels-asad-photo-maldives-2549029.jpg" alt="image de gite">
+            <img src="static/img/maldive-500-700.png" alt="image de gite">
         </figure>
 
         <div class="card-description">
@@ -37,9 +37,8 @@ while($data = $heb->fetch()) {
         <div class="card-button-div">
             <input type="button" value="see more">
         </div>
-    </div>
 
-    <footer class="card-footer">
+        <footer class="card-footer">
         <figure>
             <?= $hebergement->getNbLits(); ?>
             <img src="" alt="nbr de lits">
@@ -49,6 +48,9 @@ while($data = $heb->fetch()) {
             <img src="" alt="nbr de sdb">
         </figure>
     </footer>
+    </div>
+
+
 </section>
 <?php
 }

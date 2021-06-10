@@ -1,53 +1,85 @@
 .card {
     border: 1px solid black;
     width: 45vw;
-    min-width: 200px;
-    max-width: 600px;
+    min-width: 300px;
+    max-width: 500px;
     max-height: 400px;
+
+    background-color: var(--grey-card);
 }
 .card * {
     /* border: 1px solid black; */
 }
 .card-header {
-    border: 1px solid rgb(232, 120, 15);
+    border: 1px solid var(--orange);
     width: 100%;
     height: min-content;
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
+}
+.card-header h3 {
+    margin-bottom: 3%;
 }
 .card-header div {
     display: flex;
     justify-content: space-between;
 }
 .card-header ul {
+    width: 50%;
     display: flex;
+    justify-content: space-around;
+    list-style: none;
 }
-.card-content {
-    display: flex;
-    flex-flow: column wrap;
-    background-color: brown;
-}
+
+/*  */
 .card-content * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) repeat(2, 1fr) 2fr;
+    grid-template-rows: 2fr repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.card-content p {
+    padding: 5% 10%;
+    text-align: left;
 }
 .card-content > figure {
+    grid-area: 1 / 1 / 3 / 3;
     padding: 0;
     margin: 0;
-    width: 50%;
-}
-.card-content img {
-    /* mettre une img */
     width:  200px;
     height: 200px;
+    min-width: 150px;
+    min-height: 150px;
+}
+.card-content img {
+    width:  100%;
+    height: 100%;
 }
 .card-description {
+    grid-area: 1 / 3 / 2 / 6;
 }
 .card-button-div {
-
+    grid-area: 2 / 3 / 3 / 6; 
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.card input[type=button] {
+    background-color: var(--orange);
+    width: 60%;
+    padding: 5% 0 0 20%;
+    text-transform: uppercase;
+    border: none;
 }
 .card-footer {
-    width: 50%;
-    height: min-content;
+    grid-area: 3 / 1 / 4 / 3;
+    /* height: min-content; */
     display: flex;
     justify-content: center;
 }
@@ -55,3 +87,16 @@
     padding: 0;
     margin: 0;
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) repeat(2, 1fr) 2fr;
+    grid-template-rows: 2fr repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 3 / 3; }
+    .div2 { grid-area: 3 / 1 / 4 / 3; }
+    .div3 { grid-area: 1 / 3 / 2 / 6; }
+    .div4 { grid-area: 2 / 3 / 3 / 6; } 
