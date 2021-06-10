@@ -107,13 +107,21 @@ class  HebergementManager extends ConnexionManager {
             die('erreur on update: ' . $e->getMessage() );
         }
     }
+}
 
-//////////////////////////////////:
-//GETTERS SETTERS
-    public function getTablename() {
+//////////////////////////////////////////////////////////// 
+class ReservationsManager extends ConnexionManager {
+    protected $tablename;
+
+    function __construct($hostname, $username, $password, $basename,$tablename) {
+        parent::__construct($hostname, $username, $password, $basename);
+        $this->tablename=$tablename;
+    }
+    public function getTablenameresa() {
         return $this->tablename;
     }
-    public function setTablename() {
+
+    public function setTablenameresa() {
         $this->tablename=$tablename;
     }
 

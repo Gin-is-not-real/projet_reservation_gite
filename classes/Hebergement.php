@@ -1,5 +1,4 @@
 <?php 
-
 class Hebergement {
     private $id;
     private $intitule;
