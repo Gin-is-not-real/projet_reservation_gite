@@ -30,36 +30,30 @@ class ConnexionManager {
     public function getHostname() {
         return $this->hostname;
     }
-
     public function getUsername() {
         return $this->username;
     }
-
     public function getPassword() {
         return $this->password;
     }
-    
     public function getbasename() {
         return $this->getbasename;
     }
-
     public function setHostname() {
         $this->hostname=$hostname;
     }
-
     public function setUsername() {
         $this->username=$username;
     }
-
     public function setPassword() {
         $this->password=$password;
     }
-
     public function setbasename() {
         $this->basename=$basename;
     }
 }
 
+//////////////////////////////////////////////////////////// 
 class  HebergementManager extends ConnexionManager {
     protected $tablename;
 
@@ -67,14 +61,7 @@ class  HebergementManager extends ConnexionManager {
         parent::__construct($hostname, $username, $password, $basename);
         $this->tablename=$tablename;
     }
-    public function getTablename() {
-        return $this->tablename;
-    }
-
-    public function setTablename() {
-        $this->tablename=$tablename;
-    }
-
+    
     public function addHebergement($intitule, $categorie, $description, $photo, $nbLits, $nbSdb, $localisation, $prix, $disponibilite) {
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix, disponibilite) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix, :disponibilite)");
@@ -105,15 +92,15 @@ class  HebergementManager extends ConnexionManager {
             $req = $this->dbPDO->prepare("UPDATE $this->tablename SET intitule=:intitule, categorie=:categorie, description=:description, photo=:photo, nb_lits=:nb_lits, nb_sdb=:nb_sdb, localisation=:localisation, prix=:prix, disponibilite=:disponibilite WHERE id_hebergement =$id"); 
             
             $reponse = $req->execute(array(
-                "intitule" => $intitule,
-                "categorie" => $categorie,
-                "description" => $description,
-                "photo" => $photo,
-                "nb_lits" => $nbLits,
-                "nb_sdb" => $nbSdb,
-                "localisation" => $localisation,
-                "prix" => $prix,
-                "disponibilite" => $disponibilite
+                "intitule" => $_POST['intitule'],
+                "categorie" => $_POST['categorie'],
+                "description" => $_POST['description'],
+                "photo" => $_POST['photo'],
+                "nb_lits" => $_POST['nbLits'],
+                "nb_sdb" => $_POST['nbSdb'],
+                "localisation" => $_POST['localisation'],
+                "prix" => $_POST['prix'],
+                "disponibilite" => $_POST['disponibilite']
             ));
         }
         catch (Exception $e) {
@@ -121,10 +108,13 @@ class  HebergementManager extends ConnexionManager {
         }
     }
 
-
-
-
-
-
+//////////////////////////////////:
+//GETTERS SETTERS
+    public function getTablename() {
+        return $this->tablename;
+    }
+    public function setTablename() {
+        $this->tablename=$tablename;
+    }
 
 }
