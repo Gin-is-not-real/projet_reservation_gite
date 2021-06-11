@@ -1,6 +1,7 @@
 body {
     --orange: rgb(244, 84, 21);
     --grey-card: #D7D7D7;
+    --transparent-black: #00000075;
 }
 
 html * {

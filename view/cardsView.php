@@ -1,7 +1,11 @@
 <?php 
 require_once('managers/ConnexionManager.php');//pour appeler les fonctions du manager declaré dans l'index
 require 'classes/Hebergement.php';
-
+?>
+    <article>
+        
+   
+<?php
 $heb = $manager->getHebergements();
 while($data = $heb->fetch()) {
     $hebergement = new Hebergement($data);
@@ -49,5 +53,8 @@ while($data = $heb->fetch()) {
 
 
 </section>
+
 <?php
 }
+?>
+</article>
