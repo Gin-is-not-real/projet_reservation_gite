@@ -1,6 +1,6 @@
 <section id="sec-filters">
     <form action=""> 
-  bonjour
+  bonjour Alice !
   <label for="categorie"> Catégorie </label> 
   <select name="categorie" id="categorie">
       
