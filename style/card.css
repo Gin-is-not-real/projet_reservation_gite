@@ -1,5 +1,5 @@
 .card {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 45vw;
     min-width: 300px;
     max-width: 500px;
@@ -36,7 +36,6 @@
 .card-content * {
     /* border: 1px solid black; */
 }
-
 .card-content {
     display: grid;
     grid-template-columns: repeat(2, 2fr) repeat(2, 1fr) 2fr;

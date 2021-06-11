@@ -5,8 +5,6 @@ require 'classes/Hebergement.php';
 $heb = $manager->getHebergement(2);
 while($data = $heb->fetch()) {
     $hebergement = new Hebergement($data);
-
-
 ?>
     <section class='card'>
     <header class="card-header">
@@ -14,7 +12,6 @@ while($data = $heb->fetch()) {
 
         <div>
             <h4><?= $hebergement->getCategorie(); ?></h4>
-            
             <ul>
                 <li>tag 1</li>
                 <li>tag 2</li>
