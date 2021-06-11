@@ -1,0 +1,33 @@
+body {
+    background-image: url("../static/img/fond-ecran.jpg");
+}
+ body>header {
+    height: 7vh;
+    background-color: var(--transparent-black);
+
+}
+
+
+#blank-section {
+    height: 70vh;
+    border: 1px solid black;
+}
+
+#main-section {
+    background-color: var(--transparent-black);
+}
+
+
+
+
+#main-section header {
+    text-align: center;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+article {
+   
+}
