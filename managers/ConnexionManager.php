@@ -70,9 +70,9 @@ class  HebergementManager extends ConnexionManager {
         return $req;
     }
 
-    public function listHebergements() {
+    public function getHebergements() {
         try {
-            $req = $this->dbPDO->query('SELECT * FROM $this->tablename ORDER BY id_hebergement DESC');
+            $req = $this->dbPDO->query("SELECT * FROM $this->tablename ORDER BY id_hebergement DESC");
         }
         catch (Exception $e) {
             die('erreur on list: ' . $e->getMessage());

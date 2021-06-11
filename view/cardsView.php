@@ -2,7 +2,7 @@
 require_once('managers/ConnexionManager.php');//pour appeler les fonctions du manager declaré dans l'index
 require 'classes/Hebergement.php';
 
-$heb = $manager->getHebergement(2);
+$heb = $manager->getHebergements();
 while($data = $heb->fetch()) {
     $hebergement = new Hebergement($data);
 ?>
