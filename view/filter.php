@@ -1,6 +1,6 @@
 <section id="sec-filters">
     <form action=""> 
- 
+  bonjour
   <label for="categorie"> Catégorie </label> 
   <select name="categorie" id="categorie">
       
