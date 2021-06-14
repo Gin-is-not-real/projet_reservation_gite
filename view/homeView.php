@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/general.css">
     <link rel="stylesheet" href="style/card.css">
+    <link rel="stylesheet" href="style/home.css">
 
     <title>Home</title>
 </head>
@@ -16,11 +17,32 @@
     <hr><br>
 
     <main>
-        <?php
+        <section id="blank-section">
+            
+
+        </section>
+        <section id="main-section">
+            <header>
+                <h2>
+                    Voir nos logements
+                </h2>
+            </header>
+            <?php
             include "filter.php";
 
-            include 'cardsView.php';
+            include "cardsView.php";
         ?>
+
+
+        </section>
+
+
+
+
+
+
+
+        
     </main>
 
     <br><hr>

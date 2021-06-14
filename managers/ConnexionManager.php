@@ -142,6 +142,28 @@ class ReservationsManager extends ConnexionManager {
         $this->tablename=$tablename;
     }
 
+
+    public function getReservationsById($id) {
+        try {
+            $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE id_hebergement=" . $id);
+        }
+        catch (Exception $e) {
+            die('erreur on list: ' . $e->getMessage());
+        }
+        return $req;
+    }
+
+    public function getReservations() {
+        try {
+            $req = $this->dbPDO->query("SELECT * FROM $this->tablename ORDER BY id_hebergement DESC");
+        }
+        catch (Exception $e) {
+            die('erreur on list: ' . $e->getMessage());
+        }
+        return $req;
+    }
+
+
     public function addReservations($idHebergement, $dateOccupation, $dateLiberation) {
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation) VALUES (:id_hebergement, :date_occupation, :date_liberation)");
