@@ -2,7 +2,7 @@
 require_once('managers/ConnexionManager.php');//pour appeler les fonctions du manager declaré dans l'index
 require 'classes/Hebergement.php';
 ?>
-    <article>
+<article id="cards">
         
    
 <?php
@@ -41,13 +41,15 @@ while($data = $heb->fetch()) {
 
         <footer class="card-footer">
         <figure>
-            <?= $hebergement->getNbLits(); ?>
-            <img src="" alt="nbr de lits">
+            <img src="static/icons/yellow_single-room_icon-icons.com_59593.png" alt="nbr de lits" width="48px" height="auto" >
         </figure>
+        <?= $hebergement->getNbLits(); ?>
+
         <figure>
-            <?= $hebergement->getNbSdb(); ?>
-            <img src="" alt="nbr de sdb">
+            <img src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb">
         </figure>
+        <?= $hebergement->getNbSdb(); ?>
+
     </footer>
     </div>
 

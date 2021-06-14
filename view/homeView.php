@@ -14,11 +14,14 @@
     <header>
         header
     </header>
-    <hr><br>
 
     <main>
         <section id="blank-section">
-            
+            <header>
+                <h1>BIJOUR</h1>
+                <h2>Bijour bih=jour</h2>
+            </header>
+
 
         </section>
         <section id="main-section">
@@ -28,24 +31,16 @@
                 </h2>
             </header>
             <?php
-            include "filter.php";
+                include "filter.php";
 
-            include "cardsView.php";
-        ?>
-
-
+                include "cardsView.php";
+            ?>
         </section>
-
-
-
-
-
 
 
         
     </main>
 
-    <br><hr>
 <footer>
     footer
 </footer>

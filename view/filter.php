@@ -1,23 +1,31 @@
 <section id="sec-filters">
     <form action=""> 
-  bonjour Alice !
-  <label for="categorie"> Catégorie </label> 
-  <select name="categorie" id="categorie">
-      
-      <option value="">  </option>
-      <option value=""> Chambres </option>
-      <option value=""> Appartements </option>
-      <option value=""> Maison </option>
-      <option value=""> Villas </option>
-</select>
-      <!-- <label for="categorie"> Catégorie </label>  <input class="inp-search" type="select" id="categorie"> -->
+        <div>
+            <label for="categorie"> Catégorie </label> 
+            <select name="categorie" id="categorie">
+                <option value="">  </option>
+                <option value=""> Chambres </option>
+                <option value=""> Appartements </option>
+                <option value=""> Maison </option>
+                <option value=""> Villas </option>
+            </select>
+        </div>
 
-  <label for="nbr-lits"> Nombres de lits </label> <input class="inp-search" type="number" min="0" id="nbr-lits">
-
-  <label for="nbr-sdb"> Nombres de salles de bain </label> <input class="inp-search" type="number" min="0" id="nbr-sdb">
-
-  <label for="date-depart"> Date de départ </label> <input class="inp-search" type="date" id="date-depart">
-
-  <label for="date-arrivee">Date d'arrivée </label> <input class="inp-search" type="date" id="date-arrivee">
-    </form>
+        <!-- <label for="categorie"> Catégorie </label>  <input class="inp-search" type="select" id="categorie"> -->
+        <div>
+            <label for="nbr-lits"> Nombre de lits </label> <input class="inp-search" type="number" min="0" id="nbr-lits">
+        </div>
+        <div>
+            <label for="nbr-sdb"> Nombre de salles de bain </label> <input class="inp-search" type="number" min="0" id="nbr-sdb">
+        </div>
+        <div>
+            <label for="date-depart"> Date de départ </label> <input class="inp-search" type="date" id="date-depart">
+        </div>
+        <div>
+            <label for="date-arrivee">Date d'arrivée </label> <input class="inp-search" type="date" id="date-arrivee">
+        </div>
+        <div id="form-filters-div-button">
+            <button>rechercher</button>
+        </div>
+      </form>
 </section>

@@ -10,3 +10,23 @@ html * {
     padding: 0;
 }
 
+body {
+    background-image: url("../static/img/fond-ecran.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+ body>header {
+    height: 7vh;
+    background-color: var(--transparent-black);
+    position: sticky;
+    top: 0;
+}
+body>footer {
+    background-color: var(--transparent-black);
+}
+
+input, select {
+    width: 40%;
+    min-width: 110px;
+}

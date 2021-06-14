@@ -50,6 +50,7 @@ class ConnexionManager {
         $this->basename=$basename;
     }
 }
+
 //////////////////////////////////////////////////////////// 
 class  HebergementManager extends ConnexionManager {
     protected $tablename;

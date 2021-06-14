@@ -1,33 +1,55 @@
-body {
-    background-image: url("../static/img/fond-ecran.jpg");
-}
- body>header {
-    height: 7vh;
-    background-color: var(--transparent-black);
-
-}
-
-
 #blank-section {
     height: 70vh;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
 #main-section {
     background-color: var(--transparent-black);
 }
-
-
-
-
-#main-section header {
+#main-section>header {
     text-align: center;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
-article {
-   
+#main-section>header h2 {
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: 1% 5%;
+    border-radius: 10px;
+}
+#sec-filters {
+    background-color: rgba(128, 128, 128, 0.693);
+    margin: 1% 2%;
+}
+#sec-filters form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#sec-filters label {
+    display: inline-block;
+    width: 50%;
+}
+#sec-filters form > div {
+    width: 45%;
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+#form-filters-div-button {
+    display: flex !important;
+    justify-content: end !important;
+}
+#form-filters-div-button button {
+    padding: 1% 3%;
+}
+@media screen and (min-width: 800px) {
+    /* gerer le responsive des cartes */
 }
