@@ -23,7 +23,6 @@ class ConnexionManager {
         catch(PDOException $e) {
             echo 'connexion failed:' . $e->getMessage();
             }
-        
     }
 
     public function getHostname() {
@@ -171,7 +170,6 @@ class ReservationsManager extends ConnexionManager {
                 "id_hebergement" => $_POST['id_hebergement'],
                 "date_occupation" => $_POST['date_occupation'],
                 "date_liberation" => $_POST['date_liberation'],
-                
             ));
         }
         catch (Exception $e) {
