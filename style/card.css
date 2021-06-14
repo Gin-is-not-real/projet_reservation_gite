@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
+    padding: 1%;
 }
 .card-header h3 {
     margin-bottom: 3%;
@@ -29,6 +30,8 @@
 .card-header div {
     display: flex;
     justify-content: space-between;
+    color: var(--orange);
+
 }
 .card-header ul {
     width: 50%;
@@ -42,6 +45,7 @@
     /* border: 1px solid black; */
 }
 .card-content {
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 2fr) repeat(2, 1fr) 2fr;
     grid-template-columns: repeat(2, 25%) repeat(2, 12%) 25%;
@@ -82,32 +86,25 @@
     text-transform: uppercase;
     border: none;
 }
+
 .card-footer {
     min-width: 50%;
-
+    max-width: 200px;
     grid-area: 3 / 1 / 4 / 3;
-    /* height: min-content; */
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+.card-footer div {
+    display: flex;
+    height: min-content;
+    justify-self: center;
+    margin: auto 0;
+}
 .card-footer figure {
     padding: 0;
-    margin: 0;
-    width: 48px;
-    height: 48px;
-    opacity: 1;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    margin-right: 20%;
 }
-
-.parent {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr) repeat(2, 1fr) 2fr;
-    grid-template-rows: 2fr repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .div1 { grid-area: 1 / 1 / 3 / 3; }
-    .div2 { grid-area: 3 / 1 / 4 / 3; }
-    .div3 { grid-area: 1 / 3 / 2 / 6; }
-    .div4 { grid-area: 2 / 3 / 3 / 6; } 

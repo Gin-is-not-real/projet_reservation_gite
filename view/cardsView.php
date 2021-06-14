@@ -4,7 +4,6 @@ require 'classes/Hebergement.php';
 ?>
 <article id="cards">
         
-   
 <?php
 $heb = $manager->getHebergements();
 while($data = $heb->fetch()) {
@@ -36,19 +35,29 @@ while($data = $heb->fetch()) {
         </div>
 
         <div class="card-button-div">
-            <input type="button" value="see more">
+            <input type="button" value="voir les dispo">
         </div>
 
         <footer class="card-footer">
-        <figure>
-            <img src="static/icons/yellow_single-room_icon-icons.com_59593.png" alt="nbr de lits" width="48px" height="auto" >
-        </figure>
-        <?= $hebergement->getNbLits(); ?>
+            <div>
+                <figure>
+                    <img class="icon" src="static/icons/yellow_single-room_icon-icons.com_59593.png" alt="nbr de lits" width="48px" height="auto" >
+                </figure>
+                <div>
+                    <?= $hebergement->getNbLits(); ?>
+                </div>
+            </div>
 
-        <figure>
-            <img src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb">
-        </figure>
-        <?= $hebergement->getNbSdb(); ?>
+            <div>
+                <figure>
+                    <img class="icon" src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb">
+                </figure>
+                <div>
+                    <?= $hebergement->getNbSdb(); ?>
+                </div>
+            </div>
+
+
 
     </footer>
     </div>

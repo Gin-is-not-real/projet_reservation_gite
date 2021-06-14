@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style/general.css">
     <link rel="stylesheet" href="style/card.css">
     <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/media_queries.css">
+
 
     <title>Home</title>
 </head>
@@ -18,8 +20,8 @@
     <main>
         <section id="blank-section">
             <header>
-                <h1>BIJOUR</h1>
-                <h2>Bijour bih=jour</h2>
+                <h1>Bienvenue chez Nina et Alice</h1>
+                <h2>Les pieds dans l'eau, la tête dans les nuages</h2>
             </header>
 
 
@@ -27,7 +29,7 @@
         <section id="main-section">
             <header>
                 <h2>
-                    Voir nos logements
+                    Voir nos gîtes
                 </h2>
             </header>
             <?php
