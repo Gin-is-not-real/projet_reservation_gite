@@ -1,10 +1,26 @@
-html {
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Kalam:wght@300;400;700&display=swap');
 html * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    /* font-family: 'Gochi Hand', cursive; */
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2.3em;
+    font-weight: 300;
+}
+h3 {
+    font-size: 1.7em;
+    font-weight: 300;
 }
 
 body {
@@ -20,7 +36,7 @@ body {
     background-attachment: fixed;
 }
 
- body>header {
+body>header {
     height: 7vh;
     background-color: var(--transparent-black);
     position: sticky;
@@ -29,7 +45,6 @@ body {
 body>footer {
     background-color: var(--transparent-black);
 }
-
 
 #sec-filters input, #sec-filters select, #sec-filters button {
     background-color: var(--orange-input);

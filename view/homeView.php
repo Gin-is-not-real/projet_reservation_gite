@@ -21,7 +21,7 @@
         <section id="blank-section">
             <header>
                 <h1>Bienvenue chez Nina et Alice</h1>
-                <h2>Les pieds dans l'eau, la tête dans les nuages</h2>
+                <h2>Trouver la location de vos rêves !</h2>
             </header>
 
 

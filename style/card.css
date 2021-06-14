@@ -29,15 +29,15 @@
 }
 .card-header div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: var(--orange);
-
 }
 .card-header ul {
     width: 50%;
     display: flex;
     justify-content: space-around;
     list-style: none;
+    font-size: 0.8em;
 }
 
 /*  */
