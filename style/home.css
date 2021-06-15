@@ -1,4 +1,4 @@
-#blank-section {
+#title-section {
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -24,6 +24,8 @@
     border-radius: 10px;
     font-size: 1.5em;
 }
+
+/* FILTERS */
 #sec-filters {
     background-color: rgba(189, 189, 189, 0.693);
     margin: 1% 2%;
@@ -41,14 +43,15 @@
 }
 #sec-filters form > div {
     width: 45%;
-    margin: 1%;
+    margin: 1% auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 #form-filters-div-button {
     display: flex !important;
-    justify-content: end !important;
 }
 #form-filters-div-button button {
     padding: 1% 3%;
 }
+
+

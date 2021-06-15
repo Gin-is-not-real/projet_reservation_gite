@@ -15,6 +15,35 @@ try {
     if(!isset($_GET["action"])) {
           require_once("view/homeView.php");
     }
+    else {
+        if($_GET['action'] == 'to-admin') {
+            require_once("view/adminView.php");
+        }
+
+        if($_GET['action'] == 'ajouter') {
+            //
+            echo 'Les valeurs suivantes ont été ajoutées: ';
+            foreach ($_POST as $key => $value) {
+                echo  $key . ': ' . $value;
+            }
+
+            $manager->addHebergement($_POST);
+            require_once("view/adminView.php");
+        }
+
+        if($_GET['action'] == 'modifier') {
+            echo $_GET['id'];
+
+            $manager->updateHebergement($_GET['id']);
+            //
+            // echo 'Les valeurs suivantes ont été modifiées: ';
+            // foreach ($_POST as $key => $value) {
+            //     echo  $key . ': ' . $value;
+            // }
+            // $manager->addHebergement($_POST);
+            // require_once("view/adminView.php");
+        }
+    }
 }
 catch (Exception $e) {
     die('erreur on index: ' . $e->getMessage() );

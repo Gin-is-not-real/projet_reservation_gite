@@ -27,6 +27,9 @@
         <div>
             <label for="nbr-sdb"> Nombre de salles de bain </label> <input class="inp-search" type="number" min="0" id="nbr-sdb">
         </div>
+        <div>
+            <label for="prix"> Prix </label> <input class="inp-search" type="number" min="0" id="prix">
+        </div>
         
         <div id="form-filters-div-button">
             <button>Rechercher</button>

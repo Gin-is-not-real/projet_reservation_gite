@@ -1,0 +1,4 @@
+#admin-main-section #cards {
+    display: flex;
+    flex-flow: column;
+}

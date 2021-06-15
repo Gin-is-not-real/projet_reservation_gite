@@ -3,6 +3,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
 }
+
 .card {
     /* border: 1px solid black; */
     margin: 2%;

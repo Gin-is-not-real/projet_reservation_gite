@@ -52,7 +52,7 @@ class ConnexionManager {
 }
 
 //////////////////////////////////////////////////////////// 
-class  HebergementManager extends ConnexionManager {
+class HebergementManager extends ConnexionManager {
     protected $tablename;
 
     function __construct($hostname, $username, $password, $basename,$tablename) {
@@ -80,19 +80,39 @@ class  HebergementManager extends ConnexionManager {
         return $req;
     }
 
-    public function addHebergement($intitule, $categorie, $description, $photo, $nbLits, $nbSdb, $localisation, $prix, $disponibilite) {
+    // public function addHebergement($intitule, $categorie, $description, $photo, $nbLits, $nbSdb, $localisation, $prix, $disponibilite) {
+    //     try {
+    //         $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix, disponibilite) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix, :disponibilite)");
+    //         $reponse = $req->execute(array(
+    //             "intitule" => $intitule,
+    //             "categorie" => $categorie,
+    //             "description" => $description,
+    //             "photo" => $photo,
+    //             "nb_lits" => $nbLits,
+    //             "nb_sdb" => $nbSdb,
+    //             "localisation" => $localisation,
+    //             "prix" => $prix,
+    //             "disponibilite" => $disponibilite
+    //         ));
+    //     }
+    //     catch (Exception $e) {
+    //         die('erreur on add: ' . $e->getMessage() );
+    //     }
+    //     return $reponse; 
+    // }
+
+    public function addHebergement($data) {
         try {
-            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix, disponibilite) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix, :disponibilite)");
+            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix)");
             $reponse = $req->execute(array(
-                "intitule" => $intitule,
-                "categorie" => $categorie,
-                "description" => $description,
-                "photo" => $photo,
-                "nb_lits" => $nbLits,
-                "nb_sdb" => $nbSdb,
-                "localisation" => $localisation,
-                "prix" => $prix,
-                "disponibilite" => $disponibilite
+                "intitule" => $data['intitule'],
+                "categorie" => $data['categorie'],
+                "description" => $data['description'],
+                "photo" => $data['photo'],
+                "nb_lits" => $data['nbr_lits'],
+                "nb_sdb" => $data['nbr_sdb'],
+                "localisation" => $data['localisation'],
+                "prix" => $data['prix']
             ));
         }
         catch (Exception $e) {
@@ -107,18 +127,17 @@ class  HebergementManager extends ConnexionManager {
 
     public function updateHebergement($id) {
         try {
-            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET intitule=:intitule, categorie=:categorie, description=:description, photo=:photo, nb_lits=:nb_lits, nb_sdb=:nb_sdb, localisation=:localisation, prix=:prix, disponibilite=:disponibilite WHERE id_hebergement =$id"); 
+            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET intitule=:intitule, categorie=:categorie, description=:description, photo=:photo, nb_lits=:nb_lits, nb_sdb=:nb_sdb, localisation=:localisation, prix=:prix WHERE id_hebergement =$id"); 
             
             $reponse = $req->execute(array(
                 "intitule" => $_POST['intitule'],
                 "categorie" => $_POST['categorie'],
                 "description" => $_POST['description'],
                 "photo" => $_POST['photo'],
-                "nb_lits" => $_POST['nbLits'],
-                "nb_sdb" => $_POST['nbSdb'],
+                "nb_lits" => $_POST['nb_lits'],
+                "nb_sdb" => $_POST['nb_sdb'],
                 "localisation" => $_POST['localisation'],
-                "prix" => $_POST['prix'],
-                "disponibilite" => $_POST['disponibilite']
+                "prix" => $_POST['prix']
             ));
         }
         catch (Exception $e) {

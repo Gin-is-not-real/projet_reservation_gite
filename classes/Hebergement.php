@@ -9,7 +9,6 @@ class Hebergement {
     private $nb_sdb;
     private $localisation;
     private $prix;
-    private $disponibilite;
     
     public function __construct($values) {
         $this->id = $values['id_hebergement'];
@@ -20,7 +19,6 @@ class Hebergement {
         $this->nb_sdb = $values['nb_sdb'];
         $this->localisation = $values['localisation'];
         $this->prix = $values['prix'];
-        $this->disponibilite = $values['disponibilite'];
     }
 
     public function describe() {
@@ -52,9 +50,6 @@ class Hebergement {
     public function getPrix() {
         return $this->prix;
     }
-    public function getDisponibilite() {
-        return $this->disponibilite;
-    }
 
     //SETTERS
     public function setId($id) {
@@ -80,9 +75,6 @@ class Hebergement {
     }
     public function setPrix($prix) {
         $this->prix=$prix;
-    }
-    public function setDisponibilite($disponibilite) {
-        $this->disponibilite=$disponibilite;
     }
 }
     
