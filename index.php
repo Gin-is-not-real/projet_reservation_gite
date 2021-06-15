@@ -32,8 +32,6 @@ try {
         }
 
         if($_GET['action'] == 'modifier') {
-            echo $_GET['id'];
-
             $manager->updateHebergement($_GET['id']);
             //
             // echo 'Les valeurs suivantes ont été modifiées: ';
@@ -42,6 +40,13 @@ try {
             // }
             // $manager->addHebergement($_POST);
             // require_once("view/adminView.php");
+        }
+
+        if($_GET['action'] == 'supprimer') {
+            echo 'L\'entrée n ' . $_GET['id'] . ' à bien été supprimée';
+
+            $manager->deleteHebergement($_GET['id']);
+            require_once("view/adminView.php");
         }
     }
 }

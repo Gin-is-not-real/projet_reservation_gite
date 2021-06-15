@@ -21,9 +21,12 @@
         </header>
 
         <section id="admin-main-section">
-            <?php include 'form.php'; ?>
+            <?php 
+                include 'voidForm.php'; 
+            
+                include 'adminFormsView.php';
+            ?>
 
-            <?php include 'cardsView.php'; ?>
 
         </section>
     </main>

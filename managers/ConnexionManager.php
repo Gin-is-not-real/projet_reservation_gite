@@ -80,27 +80,6 @@ class HebergementManager extends ConnexionManager {
         return $req;
     }
 
-    // public function addHebergement($intitule, $categorie, $description, $photo, $nbLits, $nbSdb, $localisation, $prix, $disponibilite) {
-    //     try {
-    //         $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix, disponibilite) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix, :disponibilite)");
-    //         $reponse = $req->execute(array(
-    //             "intitule" => $intitule,
-    //             "categorie" => $categorie,
-    //             "description" => $description,
-    //             "photo" => $photo,
-    //             "nb_lits" => $nbLits,
-    //             "nb_sdb" => $nbSdb,
-    //             "localisation" => $localisation,
-    //             "prix" => $prix,
-    //             "disponibilite" => $disponibilite
-    //         ));
-    //     }
-    //     catch (Exception $e) {
-    //         die('erreur on add: ' . $e->getMessage() );
-    //     }
-    //     return $reponse; 
-    // }
-
     public function addHebergement($data) {
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix)");
