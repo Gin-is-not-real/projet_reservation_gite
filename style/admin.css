@@ -2,3 +2,27 @@
     display: flex;
     flex-flow: column;
 }
+
+form[id*=form-admin-edit-] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#form-admin  {
+   
+    width: max-content;
+    margin: 0 auto;
+
+}
+
+h3 {
+    text-align: center;
+}
+.card-form {
+    width: max-content;
+    margin: 0 auto;
+    
+}
+input  {
+  
+}
