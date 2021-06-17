@@ -141,7 +141,6 @@ class ReservationsManager extends ConnexionManager {
         $this->tablename=$tablename;
     }
 
-
     public function getReservationsById($id) {
         try {
             $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE id_hebergement=" . $id);
@@ -161,7 +160,6 @@ class ReservationsManager extends ConnexionManager {
         }
         return $req;
     }
-
 
     public function addReservations($idHebergement, $dateOccupation, $dateLiberation) {
         try {

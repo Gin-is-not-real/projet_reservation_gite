@@ -46,6 +46,8 @@
         footer
     </footer>
 
+    <script type="text/javascript" src="scripts/ajax.js"></script>
     <script type="text/javascript" src="scripts/interface.js"></script>
+
 </body>
 </html>

@@ -15,7 +15,6 @@ let cards = document.querySelectorAll('.card');
 let lastSelectedCard;
 cards.forEach(card => {
     card.classList.add('unfocused-card');
-
     card.addEventListener('click', function() {
         focusOnTheSelectedCard(card);
     });
@@ -28,7 +27,7 @@ function focusOnTheSelectedCard(card) {
         lastSelectedCard.classList.add('unfocused-card');
         console.log('lastSelectedCard != undefined');
     }
-
+    //#
     if(lastSelectedCard == card) {
         console.log('lastSelectedCard == card');
     }
@@ -38,8 +37,22 @@ function focusOnTheSelectedCard(card) {
         console.log('else');
     }
     lastSelectedCard = card;
+
+    //on simule un click sur le fomrulaire de la carte pour passer la requete pour obtenir la liste des resas
+    // getHiddenForm(card).submit();
+
+    // let reservationsPhp = document.querySelector('#resas');
+    // console.log(JSON.parse(reservationsPhp));
+    // let reservationsPhp = <?php echo json_encode($resArray); ?>;
 }
 
+function getHiddenForm(card) {
+    let id = card.id;
+    let form = document.querySelector('#form-hidden-' + id);
+    return form;
+}
+
+//close the focused card and replace them to this initial position
 let btnsClose = document.querySelectorAll('#card-close');
 btnsClose.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -52,4 +65,3 @@ btnsClose.forEach(btn => {
         }, 300);
     })
 })
-

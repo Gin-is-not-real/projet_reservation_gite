@@ -8,10 +8,26 @@ require_once 'classes/Hebergement.php';
     $heb = $manager->getHebergements();
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
+
+        //la fonction pour recuperer les reservations par hebergements via req SQL
+        $resa = $resaManager->getReservationsById($hebergement->getId());
+        $resArray = [];
+        foreach ($resa as $value) {
+            $line = [];
+            // echo 'a new resa: ' . '<br>';
+            foreach ($value as $key => $result) {
+                if(is_string($key) && ($key == 'date_liberation' || $key == 'date_occupation')) {
+                    // echo $key . ' - ' . $result . '<br>';
+                    $line[$key] = $result;
+                    echo '<input type="hidden" class="<?= $key; ?>" value="hidden-arr-<?= $result; ?>">';
+                }
+            }
+            array_push($resArray, $line);
+        }
+        print_r($resArray);
     ?>
 
         <!-- CARD -->
-
         <section class='card' id=<?= $hebergement->getId(); ?> >
             <header class="card-header">
                 <div>
@@ -27,7 +43,6 @@ require_once 'classes/Hebergement.php';
                         <li>tag 5</li>
                     </ul>
                 </div>
-
             </header>
 
             <div class="card-content">
@@ -64,7 +79,14 @@ require_once 'classes/Hebergement.php';
                         </div>
                     </div>
                 </footer>
+
+                <form id="form-hidden-<?= $hebergement->getId(); ?>" action="index.php?action=get-resa&id=<?= $hebergement->getId(); ?>" method="post">
+                    <input type="hidden" name="id_hebergement" value="<?= $hebergement->getId(); ?>">
+                    <input type="submit" value="">
+                </form>
             </div>
+
+
         </section>
 
 
