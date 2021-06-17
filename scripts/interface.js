@@ -20,6 +20,20 @@ cards.forEach(card => {
     });
 })
 
+//close the focused card and replace them to this initial position
+let btnsClose = document.querySelectorAll('#card-close');
+btnsClose.forEach(btn => {
+    btn.addEventListener('click', function() {
+        lastSelectedCard.classList.remove('focused-card');
+        lastSelectedCard.classList.add('unfocused-card');
+
+        window.setTimeout(function() {
+            lastSelectedCard = undefined;
+            console.log('close', lastSelectedCard);
+        }, 300);
+    })
+})
+
 //focus the selected card
 function focusOnTheSelectedCard(card) {
     if(lastSelectedCard != undefined && lastSelectedCard != card) {
@@ -38,30 +52,36 @@ function focusOnTheSelectedCard(card) {
     }
     lastSelectedCard = card;
 
-    //on simule un click sur le fomrulaire de la carte pour passer la requete pour obtenir la liste des resas
-    // getHiddenForm(card).submit();
 
-    // let reservationsPhp = document.querySelector('#resas');
-    // console.log(JSON.parse(reservationsPhp));
-    // let reservationsPhp = <?php echo json_encode($resArray); ?>;
+    let dates = getHiddenReservationsDates(card);
 }
 
-function getHiddenForm(card) {
+
+//recupere les inputs hidden ou on as stocké les résultats de la req
+function getHiddenReservationsDates(card) {
     let id = card.id;
-    let form = document.querySelector('#form-hidden-' + id);
-    return form;
+    let arrivees = document.querySelectorAll('.date_occupation-' + id.toString());
+    let departs = document.querySelectorAll('.date_liberation-' + id.toString());
+
+    // if(arrivees.length > 0) {
+    //     return [arrivees, departs];
+    // }
+    // else {
+    //     return false;
+    // }
+    // console.log('dates :', arrivees, departs);
+
+    if(arrivees.length > 0) {
+        formatReservationsForDatePicker(arrivees, departs);
+    }
 }
 
-//close the focused card and replace them to this initial position
-let btnsClose = document.querySelectorAll('#card-close');
-btnsClose.forEach(btn => {
-    btn.addEventListener('click', function() {
-        lastSelectedCard.classList.remove('focused-card');
-        lastSelectedCard.classList.add('unfocused-card');
+function formatReservationsForDatePicker(arrivees, departs) {
+    let reservations = [];
+    
+    for(let i = 0; i < arrivees.length; i++) {
+        reservations.push({arr: new Date(arrivees[i].value), dep: new Date(departs[i].value)});
+    }
+    console.log(reservations);
+}
 
-        window.setTimeout(function() {
-            lastSelectedCard = undefined;
-            console.log('close', lastSelectedCard);
-        }, 300);
-    })
-})
