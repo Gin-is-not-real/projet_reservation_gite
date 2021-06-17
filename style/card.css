@@ -5,7 +5,8 @@
 }
 
 .card {
-    display: inherit;
+    /* position: static; */
+
     /* border: 1px solid black; */
     margin: 2%;
     width: 45vw;

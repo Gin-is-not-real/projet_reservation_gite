@@ -14,7 +14,7 @@ let btnSeeMore = document.querySelectorAll('.btn-seemore');
 
 let lastSelectedCard;
 cards.forEach(card => {
-    card.classList.add('unfocused-card');
+    // card.classList.add('unfocused-card');
 
     card.addEventListener('click', function() {
         focusOnTheSelectedCard(card);
@@ -25,23 +25,26 @@ cards.forEach(card => {
 function focusOnTheSelectedCard(card) {
     if(lastSelectedCard != undefined) {
         lastSelectedCard.classList.remove('focused-card');
-        lastSelectedCard.classList.add('unfocused-card');
+        // lastSelectedCard.classList.add('unfocused-card');
     }
-    card.classList.remove('unfocused-card');
+    // card.classList.remove('unfocused-card');
     card.classList.add('focused-card');
+    // card.style.position = 'fixed';
     lastSelectedCard = card;
 }
 
 let btnsClose = document.querySelectorAll('#card-close');
 btnsClose.forEach(btn => {
     btn.addEventListener('click', function() {
+        // console.log('lastSelectedCard', lastSelectedCard);
+
         lastSelectedCard.classList.remove('focused-card');
-        lastSelectedCard.classList.add('unfocused-card');
-        lastSelectedCard.style.position = 'static';
+        // lastSelectedCard.classList.add('unfocused-card');
+        // lastSelectedCard.style.position = 'static';
 
         console.log('lastSelectedCard', lastSelectedCard);
 
-        lastSelectedCard = undefined;
+        // lastSelectedCard = undefined;
 
     })
 })
