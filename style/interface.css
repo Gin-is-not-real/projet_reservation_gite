@@ -1,11 +1,11 @@
+.unfocused-card {
+    position: inherit;
+}
+
 .focused-card {
     border: 2px solid var(--orange);
     position: fixed;
     top: 35%;
-}
-
-.unfocused-card {
-    position: static;
 }
 
 #card-close {
