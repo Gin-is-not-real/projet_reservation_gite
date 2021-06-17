@@ -8,12 +8,13 @@
                 <link rel="stylesheet" href="datePicker.css">
     -->
 
-<section id="reservation-picker">
+    <!-- <section class="reservation-picker" data-numId="<?= $hebergement->getId(); ?>"> -->
+
         <div id="date-picker">
             <header>
-                <input type="button" value="<" onclick="setMonthNum(monthNum-1)">
-                <h3>MOIS</h3>
-                <input type="button" value=">"  onclick="setMonthNum(monthNum+1)">
+                <input class='dp-down' type="button" value="<" onclick="setMonthNum(monthNum-1)">
+                <h3 class="dp-title">MOIS</h3>
+                <input class='dp-up' type="button" value=">"  onclick="setMonthNum(monthNum+1)">
             </header>
             <div id ="calendar">
                 <input type="button" class="calendar-case" id="day-1" value="1">
@@ -63,4 +64,4 @@
         <div>
             <button id="btn-send">envoyer</button>
         </div>
-    </section>
+        <!-- </section> -->

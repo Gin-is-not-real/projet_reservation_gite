@@ -53,7 +53,8 @@ function focusOnTheSelectedCard(card) {
     lastSelectedCard = card;
 
 
-    let dates = getHiddenReservationsDates(card);
+    getHiddenReservationsDates(card);
+    let picker = new GinDatePicker(card.id);
 }
 
 
@@ -62,14 +63,6 @@ function getHiddenReservationsDates(card) {
     let id = card.id;
     let arrivees = document.querySelectorAll('.date_occupation-' + id.toString());
     let departs = document.querySelectorAll('.date_liberation-' + id.toString());
-
-    // if(arrivees.length > 0) {
-    //     return [arrivees, departs];
-    // }
-    // else {
-    //     return false;
-    // }
-    // console.log('dates :', arrivees, departs);
 
     if(arrivees.length > 0) {
         formatReservationsForDatePicker(arrivees, departs);

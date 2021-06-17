@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style/card.css">
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/interface.css">
+    <link rel="stylesheet" href="style/datePicker.css">
 
     <link rel="stylesheet" href="style/media_queries.css">
 
@@ -21,7 +22,7 @@
     <main>
         <section id="title-section">
             <header>
-                <h1>Bienvenue chez Nina et Alice</h1>
+                <h1>Gites Casa Tranquilla</h1>
                 <h2>Trouver la location de vos rêves !</h2>
             </header>
         </section>
@@ -46,8 +47,11 @@
         footer
     </footer>
 
-    <script type="text/javascript" src="scripts/ajax.js"></script>
+    <script type="text/javascript" src="scripts/datePicker.js"></script>
+    <script type="text/javascript" src="scripts/GinDatePicker.js"></script>
     <script type="text/javascript" src="scripts/interface.js"></script>
+
+
 
 </body>
 </html>

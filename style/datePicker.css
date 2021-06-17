@@ -1,0 +1,43 @@
+html {
+    --size: 30px;
+}
+.reservation-picker {
+    display: none;
+    background-color: brown;
+}
+
+#date-picker {
+    width: max-content;
+}
+#date-picker>header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, var(--size));
+    grid-template-rows: repeat(5, var(--size));
+}
+.calendar-case {
+    border: 1px solid black;
+    height: var(--size);
+    width: var(--size);
+    text-align: center;
+}
+
+#div-inputs {
+    display: flex;
+}
+#div-inputs div {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border-radius: 10px;
+}
+
+.active {
+    background-color: green;
+}

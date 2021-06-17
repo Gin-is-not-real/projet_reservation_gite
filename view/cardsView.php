@@ -12,15 +12,11 @@ require_once 'classes/Hebergement.php';
         //la fonction pour recuperer les reservations par hebergements via req SQL
         $resa = $resaManager->getReservationsById($hebergement->getId());
         foreach ($resa as $value) {
-            // echo 'a new resa: ' . '<br>';
+
             foreach ($value as $key => $result) {
+
                 if(is_string($key) && ($key == 'date_liberation' || $key == 'date_occupation')) {
-                    // echo $key . ' - ' . $result . '<br>';
-
-                    // echo '<input type="text" class="' . $key . '" id="' . $key . '-' . $hebergement->getId() . '" value="' . $result . '">';
-
                     echo '<input type="hidden" class="' . $key . '-' . $hebergement->getId() . '" value="' . $result . '">';
-                    
                 }
             }
         }
@@ -83,6 +79,9 @@ require_once 'classes/Hebergement.php';
 
         </section>
 
+        <section class="reservation-picker" id="picker-<?= $hebergement->getId(); ?>" >
+                <?php include "calendar.php"; ?>
+        </section>
 
 <?php
 }
