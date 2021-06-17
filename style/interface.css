@@ -1,0 +1,13 @@
+.focused-card {
+    border: 2px solid var(--orange);
+
+    position: fixed;
+    top: 35%;
+}
+.focused-card #card-close {
+    display: block;
+}
+
+.unfocused-card {
+    display: grid;
+}

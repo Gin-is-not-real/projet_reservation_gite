@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style/general.css">
     <link rel="stylesheet" href="style/card.css">
     <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/interface.css">
+
     <link rel="stylesheet" href="style/media_queries.css">
 
     <title>Home</title>
@@ -37,13 +39,13 @@
             ?>
             
         </section>
-
-
         
     </main>
 
-<footer>
-    footer
-</footer>
+    <footer>
+        footer
+    </footer>
+
+    <script type="text/javascript" src="scripts/interface.js"></script>
 </body>
 </html>

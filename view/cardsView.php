@@ -10,9 +10,14 @@ require_once 'classes/Hebergement.php';
         $hebergement = new Hebergement($data);
     ?>
 
+        <!-- CARD -->
+
         <section class='card' id=<?= $hebergement->getId(); ?> >
             <header class="card-header">
-                <h3><?= $hebergement->getIntitule(); ?></h3>
+                <div>
+                    <h3><?= $hebergement->getIntitule(); ?></h3>
+                    <button id="card-close">X</button>
+                </div>
 
                 <div>
                     <h4><?= $hebergement->getCategorie(); ?></h4>
@@ -22,6 +27,7 @@ require_once 'classes/Hebergement.php';
                         <li>tag 5</li>
                     </ul>
                 </div>
+
             </header>
 
             <div class="card-content">
@@ -36,7 +42,7 @@ require_once 'classes/Hebergement.php';
                 </div>
 
                 <div class="card-button-div">
-                    <input type="button" value="voir les dispo">
+                    <input class="btn-seemore" id="seemore-<?= $hebergement->getId(); ?>" type="button" value="voir les dispo">
                 </div>
 
                 <footer class="card-footer">
@@ -60,9 +66,6 @@ require_once 'classes/Hebergement.php';
                 </footer>
             </div>
         </section>
-
-
-
 
 
 <?php

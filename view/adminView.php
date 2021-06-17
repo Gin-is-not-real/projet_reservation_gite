@@ -31,6 +31,5 @@
         </section>
     </main>
 
-    <script type="text/javascript" src="scripts/admin.js"></script>
 </body>
 </html>
