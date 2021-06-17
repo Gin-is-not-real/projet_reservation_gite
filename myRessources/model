@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////
+index.php 
+
+    - GLOBALS de connexion 
+    - instance des Managers 
+
+    - routeur:
+        - no-action:
+            --> homeView 
+        
+        - ajouter:
+            $manager->addHebergement($_POST)
+            --> adminView 
+
+        - modifier:
+            $manager->updateHebergement(GET id)
+            --> adminView 
+
+        - supprimer:
+            $manager->deleteHebergement 
+            --> adminView    
+
+////////////////////////////////////////////////////
+homeView.php 
+
+    - CSS: general, card, home, interface 
+    - include: filter.php 
+    - include: cardsView.php
+
+////////////////////////////////////////////////////
+filter.php 
+
+    - formulaire pour les fonctions de filtres
+
+////////////////////////////////////////////////////
+cardsView.php 
+
+    - require classes/hebergement.php 
+
+    - recupere $manager->getHebergements()
+        - pour chaque hebergement:
+            - on instancie un objet Hebergement avec le resutat de la requete comme parametre
+
+            - on creer une section class 'card'
+            - on recupere les attributs de l'objet et on les affiche dans la carte
+
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+adminView.php 
+
+    - CSS: general, card, admin, media_queries
+
+    - include voidForm.php
+    - include adminFormsView.php
+
+////////////////////////////////////////////////////
+voidForm.php 
+
+    - formulaire d'ajout, pas de valeurs de base 
+
+////////////////////////////////////////////////////
+adminFormsView.php 
+
+    - require classes/hebergement.php 
+
+    - recupere $manager->getHebergements()
+        - pour chaque hebergement:
+            - on instancie un objet Hebergement avec le resutat de la requete comme parametre
+
+            - on creer une section class 'card'
+            - on recupere les attributs de l'objet et on les affiche dans la carte

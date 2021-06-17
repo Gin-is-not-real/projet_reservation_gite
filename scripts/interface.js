@@ -13,33 +13,36 @@ let btnSeeMore = document.querySelectorAll('.btn-seemore');
 // })
 
 let lastSelectedCard;
-
 cards.forEach(card => {
     card.classList.add('unfocused-card');
+
     card.addEventListener('click', function() {
         focusOnTheSelectedCard(card);
     });
-})
-
-let btnsClose = document.querySelectorAll('#card-close');
-btnsClose.forEach(btn => {
-    
-    btn.addEventListener('click', function() {
-
-        lastSelectedCard.classList.remove('focused-card');
-        console.log('lastSelectedCard', lastSelectedCard);
-
-    })
 })
 
 //focus the selected card
 function focusOnTheSelectedCard(card) {
     if(lastSelectedCard != undefined) {
         lastSelectedCard.classList.remove('focused-card');
+        lastSelectedCard.classList.add('unfocused-card');
     }
-    // console.log(card);
+    card.classList.remove('unfocused-card');
     card.classList.add('focused-card');
-
     lastSelectedCard = card;
 }
+
+let btnsClose = document.querySelectorAll('#card-close');
+btnsClose.forEach(btn => {
+    btn.addEventListener('click', function() {
+        lastSelectedCard.classList.remove('focused-card');
+        lastSelectedCard.classList.add('unfocused-card');
+        lastSelectedCard.style.position = 'static';
+
+        console.log('lastSelectedCard', lastSelectedCard);
+
+        lastSelectedCard = undefined;
+
+    })
+})
 
