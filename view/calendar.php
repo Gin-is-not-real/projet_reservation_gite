@@ -12,9 +12,9 @@
 
         <div id="date-picker">
             <header>
-                <input class='dp-down' type="button" value="<" onclick="setMonthNum(monthNum-1)">
+                <input class='dp-down' type="button" value="<" >
                 <h3 class="dp-title">MOIS</h3>
-                <input class='dp-up' type="button" value=">"  onclick="setMonthNum(monthNum+1)">
+                <input class='dp-up' type="button" value=">">
             </header>
             <div id ="calendar">
                 <input type="button" class="calendar-case" id="day-1" value="1">
@@ -47,6 +47,8 @@
                 <input type="button" class="calendar-case" id="day-28" value="28">
                 <input type="button" class="calendar-case" id="day-29" value="29">
                 <input type="button" class="calendar-case" id="day-30" value="30">
+                <input type="button" class="calendar-case" id="day-31" value="31">
+
             </div>
         </div>
 

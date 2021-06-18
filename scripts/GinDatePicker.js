@@ -1,6 +1,7 @@
 class GinDatePicker {
     container;
     title;
+    strId;
     inputArrivee;
     inputDepart;
     btnArrivee;
@@ -30,7 +31,6 @@ class GinDatePicker {
 
     initListeners(pickerId) {
         let picker = this;
-
         //arrows
         document.querySelector(pickerId + ' .dp-down').addEventListener('click', function() {
             // picker.setMonthNum(picker.monthNum - 1);
@@ -66,10 +66,17 @@ class GinDatePicker {
         this.dayElements.forEach(elt => {
             elt.addEventListener('click', function() {
                 let date = new Date(picker.inputArrivee.value);
-                date.setDate(this.id.replace('day-', ''));
+                date.setDate(this.value);
                 date.setMonth(parseInt(picker.title.textContent) -1);
+
                 picker.sendValueToActiveDateInput(formatDateToStr(date));
             })
+        })
+
+        let btnSend = document.querySelector(pickerId + ' #btn-send');
+        btnSend.addEventListener('click', function() {
+
+            alert("du " + picker.inputArrivee.value + " au " + picker.inputDepart.value);
         })
     }
 
@@ -80,12 +87,19 @@ class GinDatePicker {
         let dateArrivee = new Date(this.inputArrivee.value);
         let dateDepart = new Date(this.inputDepart.value);
     
-        if(active === this.inputArrivee) {
-            if(dateArrivee.getMonth() > dateDepart.getMonth() || dateArrivee.getDate() > dateDepart.getDate() ) {
-                this.inputDepart.value = this.inputArrivee.value;
+        if(dateArrivee.getMonth() > dateDepart.getMonth()) {
+            dateDepart.setMonth(dateArrivee.getMonth());
+        }
+        else if(dateArrivee.getMonth() == dateDepart.getMonth()) {
+            if(dateArrivee.getDate() >= dateDepart.getDate()) {
+                dateDepart.setDate(dateArrivee.getDate() + 1);
             }
         }
+
+        this.inputArrivee.value = formatDateToStr(dateArrivee);
+        this.inputDepart.value = formatDateToStr(dateDepart);
     }
+
     setMonthNum(num) {
         if(num <= 11 && num >= 0) {
             this.monthNum = num;
@@ -102,9 +116,7 @@ class GinDatePicker {
         this.restartElements();
 
         if(this.unablesDays != undefined) {
-            this.unablesDays.forEach(unab => {
-                this.findIntervalInDays(unab.arr, unab.dep, this.monthNum);
-            })
+            this.madeUnablesDays();
         }
     }
     restartElements() {
@@ -121,8 +133,10 @@ class GinDatePicker {
         })
     }
     
-    unablesDays() {
-
+    madeUnablesDays() {
+        this.unablesDays.forEach(unab => {
+            this.findIntervalInDays(unab.arr, unab.dep, this.monthNum);
+        })
     }
 
     findIntervalInDays(arr, dep, monthNum) {
@@ -132,27 +146,22 @@ class GinDatePicker {
             firstDay = arr.getDate();
             lastDay = (dep.getMonth()) === monthNum ? dep.getDate() : 31;
     
-            affectElements({firstDay, lastDay});
+            this.affectElements({firstDay, lastDay});
         }
     }
     
-    //CHANGE HERE THE SEELCTOR
-
     affectElements(interval) {
         console.log('will affect ' , interval);
         //boucle for: on part du premier jour, on s'arrete au dernier, et z chaque tour on agit sur le DOM
         for(let i = interval.firstDay; i <= interval.lastDay; i++) {
             
-            let day = document.querySelector(this.strID + ' #day-' + i);
-            console.log("DAY: " + day);
+            let day = document.querySelector(this.strId + ' #day-' + i);
             // console.log(day.id);
             day.style.backgroundColor = "orange";
             day.style.opacity = "0.4";
             day.disabled = true;
         }
     }
-
-
 }
 
 //////////////////////////////////////////////////////
