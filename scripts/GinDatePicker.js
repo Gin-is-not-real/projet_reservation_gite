@@ -66,6 +66,8 @@ class GinDatePicker {
         this.dayElements.forEach(elt => {
             elt.addEventListener('click', function() {
                 let date = new Date(picker.inputArrivee.value);
+
+                //on lui assigne la valeur de la case cliquée
                 date.setDate(this.value);
                 date.setMonth(parseInt(picker.title.textContent) -1);
 
@@ -80,13 +82,17 @@ class GinDatePicker {
         })
     }
 
+
     sendValueToActiveDateInput(dateStr) {
+        //on cherche l'input actif et lui assigne la valeur envoyée par le picker
         let active = this.btnArrivee.classList.contains('active') ? this.inputArrivee : this.inputDepart;
         active.value = dateStr;
     
+        //on instancie les dates a partir des valeurs d'inputs
         let dateArrivee = new Date(this.inputArrivee.value);
         let dateDepart = new Date(this.inputDepart.value);
     
+        //on verifie que la date de depart est superieure a la date d'arrivée
         if(dateArrivee.getMonth() > dateDepart.getMonth()) {
             dateDepart.setMonth(dateArrivee.getMonth());
         }
@@ -96,6 +102,7 @@ class GinDatePicker {
             }
         }
 
+        //on réajuste les valeur d'inputs
         this.inputArrivee.value = formatDateToStr(dateArrivee);
         this.inputDepart.value = formatDateToStr(dateDepart);
     }
@@ -104,11 +111,6 @@ class GinDatePicker {
         if(num <= 11 && num >= 0) {
             this.monthNum = num;
         }
-        // this.title.textContent = formatMonth(this.monthNum);
-
-        // this.unablesDays.forEach(unab => {
-        //     this.findIntervalInDays(unab.arr, unab.dep, this.monthNum);
-        // })
     }
 
     updateMonth(num) {
