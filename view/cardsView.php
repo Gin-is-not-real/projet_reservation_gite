@@ -51,9 +51,9 @@ require_once 'classes/Hebergement.php';
                     </p>
                 </div>
 
-                <div class="card-button-div">
+                <!-- <div class="card-button-div">
                     <input class="btn-seemore" id="seemore-<?= $hebergement->getId(); ?>" type="button" value="voir les dispo">
-                </div>
+                </div> -->
 
                 <footer class="card-footer">
                     <div>

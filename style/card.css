@@ -5,8 +5,7 @@
 }
 
 .card {
-    /* position: static; */
-    /* border: 1px solid black; */
+    box-sizing: content-box;
     margin: 2%;
     width: 45vw;
     min-width: 400px;
@@ -14,7 +13,9 @@
     max-height: 400px;
     background-color: var(--grey-card);
 }
-
+.card:hover {
+    border: 2px solid var(--orange);
+}
 .card * {
     /* border: 1px solid black; */
 }
@@ -59,14 +60,13 @@
     grid-template-columns: repeat(2, 15%) repeat(2, 8%) 15%s;
     grid-template-columns: repeat(2, 25%) repeat(2, 12%) 25%;
     grid-template-rows: 2fr repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+
 }
 .card-content p {
     padding: 5% 10%;
     text-align: left;
     font-size: 0.8em;  
-    max-height: 200px;  
+    max-height: 100%;  
 }
 .card-content > figure {
     grid-area: 1 / 1 / 3 / 3;

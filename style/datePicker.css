@@ -10,12 +10,13 @@ html {
     display: none;
     background-color: brown;
     width: 35vw;
+    max-width: 300px;
 
     border-radius: 10px;
 }
 .focused-card + .reservation-picker {
     position: fixed;
-    top: 30%;
+    top: 25%;
     right: 10%;
     width: 40vw;
 
@@ -43,11 +44,6 @@ html {
     background-color: var(--transblack);
     color: var(--orange);
 }
-.dp-down, .dp-up {
-    height: var(--size);
-    width: var(--size);
-    border-radius: var(--border-radius);
-}
 #calendar {
     margin: 5% auto;
     display: grid;
@@ -58,6 +54,13 @@ html {
     justify-content: center;
 
 }
+.dp-down, .dp-up {
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--border-radius);
+    border: var(--orange);
+}
+
 .calendar-case {
     border: 1px solid black;
     height: var(--size);
@@ -65,6 +68,9 @@ html {
     text-align: center;
 
     border-radius: var(--border-radius);
+}
+.calendar-case:hover, .dp-down:hover, .dp-up:hover {
+    border: 1px solid var(--orange);
 }
 
 #div-inputs {
@@ -116,7 +122,6 @@ button {
     color: black;
 }
 .active + input[type=date]:disabled {
-    /* background-color: var(--orange); */
     border: 2px solid var(--orange);
 
     color: black;

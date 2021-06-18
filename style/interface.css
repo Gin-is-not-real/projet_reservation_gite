@@ -6,7 +6,7 @@
     border: 2px solid var(--orange);
     position: fixed;
     top: 20%;
-    left: 20%;
+    left: 10%;
 }
 
 #card-close {
@@ -15,9 +15,12 @@
     height: 50px;
     border-radius: 100%;
     border: none;
+    background-color: rgba(128, 128, 128, 0.316);
 }
 #card-close:hover {
-    background-color: rgba(128, 128, 128, 0.316);
+    /* background-color: rgba(87, 87, 87, 0.72); */
+    font-size: 1em;
+    border: 2px solid var(--orange);
 }
 
 .focused-card #card-close {
