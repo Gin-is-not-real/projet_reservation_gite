@@ -1,43 +1,125 @@
 html {
     --size: 30px;
+    --border-radius: 100%;
+    --transblack: rgba(0, 0, 0, 0.535);
+}
+.reservation-picker * {
+    /* border: 1px solid chartreuse; */
 }
 .reservation-picker {
     display: none;
     background-color: brown;
-}
+    width: 35vw;
 
+    border-radius: 10px;
+}
+.focused-card + .reservation-picker {
+    position: fixed;
+    top: 30%;
+    right: 10%;
+    width: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #date-picker {
     width: max-content;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 #date-picker>header {
+    width: 70%;
+
+    padding: 0 2%;
+    margin: 2% auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: var(--transblack);
+    color: var(--orange);
+}
+.dp-down, .dp-up {
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--border-radius);
 }
 #calendar {
+    margin: 5% auto;
     display: grid;
     grid-template-columns: repeat(7, var(--size));
     grid-template-rows: repeat(5, var(--size));
+    gap: 1%;
+
+    justify-content: center;
+
 }
 .calendar-case {
     border: 1px solid black;
     height: var(--size);
     width: var(--size);
     text-align: center;
+
+    border-radius: var(--border-radius);
 }
 
 #div-inputs {
+    width: 80%;
+    margin: 2% auto;
+
     display: flex;
+    justify-content: center;
 }
 #div-inputs div {
     display: flex;
     flex-direction: column;
+
+    padding: 2%;
+    width: 45%;
+}
+#div-inputs div * {
+    padding: 4%;
+    width: 100%;
+    margin: 2%;
+}
+.reservation-picker input[type=date]:disabled {
+    opacity: 1;
+    background-color: var(--transblack);
+    color: orange;
+    border-radius: 10px;
+    border: 2px solid transparent;
 }
 
 button {
     border-radius: 10px;
+    background-color: var(--transblack);
+    color: var(--orange);
+    border: 1px solid black;
 }
+#div-inputs + div {
+    margin-bottom: 4%;
+}
+#btn-send {
+    padding: 10%;
+    width: max-content;
+    margin-bottom: 4%;
+    background-color: var(--orange);
+    color: black;
 
+}
 .active {
-    background-color: green;
+    background-color: var(--orange);
+    color: black;
+}
+.active + input[type=date]:disabled {
+    /* background-color: var(--orange); */
+    border: 2px solid var(--orange);
+
+    color: black;
+    color: orange;
+
 }

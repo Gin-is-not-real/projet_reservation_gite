@@ -159,7 +159,7 @@ class GinDatePicker {
             
             let day = document.querySelector(this.strId + ' #day-' + i);
             // console.log(day.id);
-            day.style.backgroundColor = "orange";
+            day.style.backgroundColor = "rgba(255, 166, 0, 0.37)";
             day.style.opacity = "0.4";
             day.disabled = true;
         }

@@ -16,6 +16,7 @@
                 <h3 class="dp-title">MOIS</h3>
                 <input class='dp-up' type="button" value=">">
             </header>
+            
             <div id ="calendar">
                 <input type="button" class="calendar-case" id="day-1" value="1">
                 <input type="button" class="calendar-case" id="day-2" value="2">
@@ -54,11 +55,11 @@
 
         <div id="div-inputs">
             <div>
-                <button id="btn-arrivee" class="active">selectionner date arrivée</button>
+                <button id="btn-arrivee" class="active">arrivée</button>
                 <input id="calendar-arrivee" type="date" disabled=true>
             </div>
             <div>
-                <button id="btn-depart">selectionner date depart</button>
+                <button id="btn-depart">depart</button>
                 <input id="calendar-depart" type="date" disabled=true>
             </div>
         </div>
