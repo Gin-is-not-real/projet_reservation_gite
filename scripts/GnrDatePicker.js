@@ -1,7 +1,7 @@
-class GinDatePicker {
+class GnrDatePicker {
     container;
     title;
-    strId;
+    parentId;
     inputArrivee;
     inputDepart;
     btnArrivee;
@@ -11,22 +11,22 @@ class GinDatePicker {
 
     unablesDays = [];
 
-    constructor(id, unables) {
-        let strId = '#picker-' + id;
-        this.strId = strId;
-        this.container = document.querySelector(strId);
-        this.title = document.querySelector(strId + ' .dp-title');
+    constructor(containerId, unables) {
+        let parentId = '#picker-' + containerId;
+        this.parentId = parentId;
+        this.container = document.querySelector(parentId);
+        this.title = document.querySelector(parentId + ' .dp-title');
 
-        this.inputArrivee = document.querySelector(strId + ' #calendar-arrivee');
-        this.inputDepart = document.querySelector(strId + ' #calendar-depart');
-        this.btnArrivee = document.querySelector(strId + ' #btn-arrivee');
-        this.btnDepart = document.querySelector(strId + ' #btn-depart');
+        this.inputArrivee = document.querySelector(parentId + ' #calendar-arrivee');
+        this.inputDepart = document.querySelector(parentId + ' #calendar-depart');
+        this.btnArrivee = document.querySelector(parentId + ' #btn-arrivee');
+        this.btnDepart = document.querySelector(parentId + ' #btn-depart');
 
         this.unablesDays = unables;
-        this.initListeners(strId);
+        this.initListeners(parentId);
         this.updateMonth(new Date().getMonth());
 
-        console.log(id, this);
+        console.log(parentId, this);
     }
 
     initListeners(pickerId) {
@@ -157,7 +157,7 @@ class GinDatePicker {
         //boucle for: on part du premier jour, on s'arrete au dernier, et z chaque tour on agit sur le DOM
         for(let i = interval.firstDay; i <= interval.lastDay; i++) {
             
-            let day = document.querySelector(this.strId + ' #day-' + i);
+            let day = document.querySelector(this.parentId + ' #day-' + i);
             // console.log(day.id);
             day.style.backgroundColor = "rgba(255, 166, 0, 0.37)";
             day.style.opacity = "0.4";

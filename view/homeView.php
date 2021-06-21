@@ -48,7 +48,7 @@
     </footer>
 
     <script type="text/javascript" src="scripts/datePicker.js"></script>
-    <script type="text/javascript" src="scripts/GinDatePicker.js"></script>
+    <script type="text/javascript" src="scripts/GnrDatePicker.js"></script>
     <script type="text/javascript" src="scripts/interface.js"></script>
 
 
