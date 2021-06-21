@@ -50,7 +50,7 @@
 #form-filters-div-button {
     display: flex !important;
 }
-#form-filters-div-button button {
+#form-filters-div-button input[type=submit] {
     padding: 1% 3%;
 }
 

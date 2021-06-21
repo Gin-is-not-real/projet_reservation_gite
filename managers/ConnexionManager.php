@@ -80,6 +80,42 @@ class HebergementManager extends ConnexionManager {
         return $req;
     }
 
+    public function getHebergementsWithFilter() {
+        $arrayFilters = [];
+
+        if(isset($_POST['nbr_lits'])) {
+            $nb_lits = $_POST["nbr_lits"];
+            array_push($arrFilters, " nb_lits LIKE '$nb_lits' ");
+        }
+        if(isset($_POST['nbr-sdb'])) {
+            $nb_sdb = $_POST['nbr-sdb'];
+            array_push($arrFilters, " nb_sdb LIKE '$nb_sdb' ");
+
+        }
+        if(isset($_POST['categorie'])) {
+            $categorie = $_POST['categorie'];
+            array_push($arrFilters, " categorie LIKE '$categorie' ");
+        }
+
+        $str = "";
+        foreach($arrFilters as $value) {
+            $str .= $value . ' AND ';
+        }
+        echo substr($str, 0, -3);
+
+            $categorie = 'maison';
+        try {
+            // $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
+
+            $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
+
+        }
+        catch (Exception $e) {
+            die('erreur on list: ' . $e->getMessage());
+        }
+        return $req;
+    }
+ 
     public function addHebergement($data) {
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (intitule, categorie, description, photo, nb_lits, nb_sdb, localisation, prix) VALUES (:intitule, :categorie, :description, :photo, :nb_lits, :nb_sdb, :localisation, :prix)");
@@ -163,6 +199,8 @@ class ReservationsManager extends ConnexionManager {
 
     public function addReservation($idHebergement, $dateOccupation, $dateLiberation, $clientMail) {
     // public function addReservation($data) {
+
+
 
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation, client_mail) VALUES (:id_hebergement, :date_occupation, :date_liberation, :client_mail)");

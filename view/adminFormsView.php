@@ -20,10 +20,10 @@
 
             <select name="categorie">
                 <option value=""><?= $hebergement->getCategorie(); ?> </option>
-                <option value="chambre"> Chambre </option>
-                <option value="appart"> Appartement </option>
-                <option value="maison"> Maison </option>
-                <option value="villa"> Villa </option>
+                <option value="Chambre"> Chambre </option>
+                <option value="Appartement"> Appartement </option>
+                <option value="Maison"> Maison </option>
+                <option value="Villa"> Villa </option>
             </select>
         </div>
 
