@@ -81,8 +81,8 @@ class GnrDatePicker {
         })
 
         let btnSend = document.querySelector(pickerId + ' #btn-send');
-
         btnSend.addEventListener('click', function() {
+
             let formResa = document.querySelector('#form-resa');
                 if(formResa.checkValidity() ) {
 
@@ -90,6 +90,9 @@ class GnrDatePicker {
                         alert('Veuillez remplir tout les champs ');
                     }
                     else {
+                        picker.inputArrivee.disabled = false;
+                        picker.inputDepart.disabled = false;
+
                         if(confirm("Vous allez réserver du " + picker.inputArrivee.value + " au " + picker.inputDepart.value + '\n Confirmer ?')) {
                             //#envoyer mail
                             alert('Un mail va vous étre adresser, merci de verifier vos spams');

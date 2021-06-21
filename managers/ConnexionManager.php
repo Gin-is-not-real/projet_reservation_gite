@@ -136,7 +136,7 @@ class HebergementManager extends ConnexionManager {
 class ReservationsManager extends ConnexionManager {
     protected $tablename;
 
-    function __construct($hostname, $username, $password, $basename,$tablename) {
+    function __construct($hostname, $username, $password, $basename, $tablename) {
         parent::__construct($hostname, $username, $password, $basename);
         $this->tablename=$tablename;
     }
@@ -161,15 +161,25 @@ class ReservationsManager extends ConnexionManager {
         return $req;
     }
 
-    public function addReservations($idHebergement, $dateOccupation, $dateLiberation) {
+    public function addReservation($idHebergement, $dateOccupation, $dateLiberation, $clientMail) {
+    // public function addReservation($data) {
+
         try {
-            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation) VALUES (:id_hebergement, :date_occupation, :date_liberation)");
+            $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation, client_mail) VALUES (:id_hebergement, :date_occupation, :date_liberation, :client_mail)");
             $reponse = $req->execute(array(
                 "id_hebergement" => $idHebergement,
                 "date_occupation" => $dateOccupation,
                 "date_liberation" => $dateLiberation,
-               
+                "client_mail" => $clientMail
             ));
+
+            // $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation, client_mail) VALUES (:id_hebergement, :date_occupation, :date_liberation, :client_mail)");
+            // $reponse = $req->execute(array(
+            //     "id_hebergement" => $data['id_hebergement'],
+            //     "date_occupation" => $data['date_occupation'],
+            //     "date_liberation" => $data['date_liberation'],
+            //     "client_mail" => $data['client_mail']
+            // ));
         }
         catch (Exception $e) {
             die('erreur on add: ' . $e->getMessage() );
@@ -183,12 +193,13 @@ class ReservationsManager extends ConnexionManager {
 
     public function updateReservations($idReservation) {
         try {
-            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET id_hebergement=:id_hebergement, date_occupation=:date_occupation, date_liberation=:date_liberation "); 
+            $req = $this->dbPDO->prepare("UPDATE $this->tablename SET id_hebergement=:id_hebergement, date_occupation=:date_occupation, date_liberation=:date_liberation, client_mail=:client_mail "); 
             
             $reponse = $req->execute(array(
                 "id_hebergement" => $_POST['id_hebergement'],
                 "date_occupation" => $_POST['date_occupation'],
                 "date_liberation" => $_POST['date_liberation'],
+                "client_mail" => $_POST['client_mail'],
             ));
         }
         catch (Exception $e) {

@@ -50,6 +50,15 @@ try {
             require_once("view/adminView.php");
         }
 
+        else if($_GET['action'] == 'add-resa') {
+            print_r($_POST);
+            print_r($_GET);
+
+            // $resaManager->addReservation($_POST);
+            $resaManager->addReservation($_GET['id'], $_POST['calendar-depart'], $_POST['calendar-arrivee'], $_POST['user-mail']);
+            require_once('view/homeView.php');
+        }
+
 
     }
 }

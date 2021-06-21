@@ -52,7 +52,7 @@
 
             </div>
         </div>
-        <form id="form-resa" action="index.php" method='post'>
+        <form id="form-resa" action="index.php?action=add-resa&id=<?= $hebergement->getId(); ?>" method='post'>
 
             <div id="div-inputs">
                 <div>
