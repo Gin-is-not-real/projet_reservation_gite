@@ -1,14 +1,16 @@
 <form id="form-admin" action="index.php?action=ajouter" method="post">
+    <H3>Ajouter</H3>
     <div>
-        <label for="intitule">title</label>
+        <label for="intitule">Intitulé</label>
         <input type="text" name="intitule" id="">
     </div>
+     
 
-    <div>
+    <div> 
         <label for="categorie"> Catégorie </label> 
             <select name="categorie">
                 <option value="chambre"> Chambre </option>
-                <option value="appart"> Appartement </option>
+                <option value="appartement"> Appartement </option>
                 <option value="maison"> Maison </option>
                 <option value="villa"> Villa </option>
             </select>

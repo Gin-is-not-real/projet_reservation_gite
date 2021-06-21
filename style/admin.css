@@ -2,3 +2,74 @@
     display: flex;
     flex-flow: column;
 }
+
+form[id*=form-admin-edit-] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+#form-admin  {
+   
+    display: flex;
+    flex-flow: row wrap;
+    width: 70vw;
+    margin: 2% auto;
+    margin-top: 50px;
+}
+
+h3 {
+  
+   font-size: 50px;
+   margin-top: -60px;
+   text-align: center;
+}
+
+.card-form {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    padding: 2%;
+    justify-content: space-around;
+}
+
+.admin {
+    display: inline-block;
+    padding: 2%;
+    justify-content: space-around;
+    width: min-content;
+} 
+
+label {
+    color: white;
+}
+
+input {
+    background-color: rgba(194, 111, 81, 0.671);
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 2%;
+}
+
+select {
+    background-color: rgba(194, 111, 81, 0.671);
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+.modif {
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+.bouton  {
+    background-color:rgba(194, 111, 81, 0.671); 
+    display:flex;
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 10%;
+}
