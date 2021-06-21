@@ -52,19 +52,27 @@
 
             </div>
         </div>
+        <form id="form-resa" action="index.php" method='post'>
 
-        <div id="div-inputs">
+            <div id="div-inputs">
+                <div>
+                    <input type="button" id="btn-arrivee" value="arrivée" class="active"></button>
+                    <input name="calendar-depart" id="calendar-arrivee" type="date" disabled=true required>
+                </div>
+                <div>
+                    <input type="button" id="btn-depart" value="départ"></button>
+                    <input name="calendar-arrivee" id="calendar-depart" type="date" disabled=true required>
+                </div>
+
+                <input type="submit" id="sub-form-dates" name="sub-form-dates" hidden>
+            </div>
+
             <div>
-                <button id="btn-arrivee" class="active">arrivée</button>
-                <input id="calendar-arrivee" type="date" disabled=true>
+                <label for="user-mail">Entrez votre mail:</label>
+                <input type="email" name="user-mail" id="" required>
             </div>
             <div>
-                <button id="btn-depart">depart</button>
-                <input id="calendar-depart" type="date" disabled=true>
+                <input type="button" id="btn-send" value="envoyer"></button>
+                <input type="submit" id="sub-send" hidden></button>
             </div>
-        </div>
-
-        <div>
-            <button id="btn-send">envoyer</button>
-        </div>
-        <!-- </section> -->
+        </form>

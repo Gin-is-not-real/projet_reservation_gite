@@ -62,6 +62,11 @@ class GnrDatePicker {
             // console.log(calendarArrivee.value);
         })
 
+        this.subFormDates = document.querySelector('#sub-form-dates');
+        this.subFormDates.addEventListener('click', function() {
+            confirm('vous confirmez ?');
+        })
+
         this.dayElements = document.querySelectorAll(pickerId + ' .calendar-case');
         this.dayElements.forEach(elt => {
             elt.addEventListener('click', function() {
@@ -76,11 +81,33 @@ class GnrDatePicker {
         })
 
         let btnSend = document.querySelector(pickerId + ' #btn-send');
-        btnSend.addEventListener('click', function() {
 
-            alert("du " + picker.inputArrivee.value + " au " + picker.inputDepart.value);
+        btnSend.addEventListener('click', function() {
+            let formResa = document.querySelector('#form-resa');
+                if(formResa.checkValidity() ) {
+
+                    if(picker.inputDepart.value == undefined || picker.inputDepart.value == '')  {
+                        alert('Veuillez remplir tout les champs ');
+                    }
+                    else {
+                        if(confirm("Vous allez réserver du " + picker.inputArrivee.value + " au " + picker.inputDepart.value + '\n Confirmer ?')) {
+                            //#envoyer mail
+                            alert('Un mail va vous étre adresser, merci de verifier vos spams');
+                            formResa.submit();
+                        }
+                        
+
+                    }
+                }
+                else {
+                    alert('Veuillez remplir tout les champs ');
+                }
+
+            
+
         })
     }
+
 
 
     sendValueToActiveDateInput(dateStr) {

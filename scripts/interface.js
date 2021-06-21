@@ -1,16 +1,5 @@
+let cardsContainer = document.querySelector('#cards');
 let cards = document.querySelectorAll('.card');
-// let btnSeeMore = document.querySelectorAll('.btn-seemore');
-
-// btnSeeMore.forEach(btn => {
-//     btn.addEventListener('click', function() {
-//         let cardId = btn.id.replace('seemore-', '');
-//         cards.forEach(card => {
-//             if(card.id == cardId) {
-//                 focusOnTheSelectedCard(card);
-//             }
-//         })
-//     })
-// })
 
 let lastSelectedCard;
 cards.forEach(card => {
@@ -39,6 +28,7 @@ function focusOnTheSelectedCard(card) {
     if(lastSelectedCard != undefined && lastSelectedCard != card) {
         lastSelectedCard.classList.remove('focused-card');
         lastSelectedCard.classList.add('unfocused-card');
+        
         console.log('lastSelectedCard != undefined');
     }
     //#
@@ -48,12 +38,13 @@ function focusOnTheSelectedCard(card) {
     else {
         card.classList.remove('unfocused-card');
         card.classList.add('focused-card');
+        
         console.log('else');
     }
     lastSelectedCard = card;
 
     // getReservationsDates(card);
-    let picker = new GinDatePicker(card.id, getReservationsDates(card));
+    let picker = new GnrDatePicker(card.id, getReservationsDates(card));
     // let picker = createADatePicker(card.id, getReservationsDates(card));
 }
 

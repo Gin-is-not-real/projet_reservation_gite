@@ -5,7 +5,6 @@
 }
 
 .card {
-    box-sizing: content-box;
     margin: 2%;
     width: 45vw;
     min-width: 400px;
@@ -14,7 +13,7 @@
     background-color: var(--grey-card);
 }
 .card:hover {
-    border: 2px solid var(--orange);
+    /* border: 2px solid var(--orange); */
 }
 .card * {
     /* border: 1px solid black; */

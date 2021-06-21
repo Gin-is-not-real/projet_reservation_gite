@@ -11,7 +11,6 @@ html {
     background-color: brown;
     width: 35vw;
     max-width: 300px;
-
     border-radius: 10px;
 }
 .focused-card + .reservation-picker {
@@ -92,6 +91,12 @@ html {
     width: 100%;
     margin: 2%;
 }
+#div-inputs label {
+    border-radius: 10px;
+    background-color: var(--transblack);
+    color: var(--orange);
+    border: 1px solid black;
+}
 .reservation-picker input[type=date]:disabled {
     opacity: 1;
     background-color: var(--transblack);
@@ -99,12 +104,34 @@ html {
     border-radius: 10px;
     border: 2px solid transparent;
 }
-
-button {
+#btn-arrivee, #btn-depart {
     border-radius: 10px;
     background-color: var(--transblack);
     color: var(--orange);
     border: 1px solid black;
+}
+.active#btn-arrivee, .active#btn-depart {
+    border-radius: 10px;
+    background-color: var(--transblack);
+    color: var(--orange);
+    border: 1px solid black;
+    background-color: var(--orange);
+    color: black;
+}
+button, input[type=submit] {
+    border-radius: 10px;
+    background-color: var(--transblack);
+    color: var(--orange);
+    border: 1px solid black;
+}
+
+.reservation-picker #form-resa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservation-picker #form-resa * {
+    width: min-content;
 }
 #div-inputs + div {
     margin-bottom: 4%;
@@ -115,16 +142,22 @@ button {
     margin-bottom: 4%;
     background-color: var(--orange);
     color: black;
-
 }
 .active {
     background-color: var(--orange);
     color: black;
 }
-.active + input[type=date]:disabled {
+.active + input[type=date]:disabled{
     border: 2px solid var(--orange);
 
     color: black;
     color: orange;
 
 }
+input[type=email] {
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+
+    padding: 2%;
+}
+
