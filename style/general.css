@@ -61,7 +61,7 @@ body>footer {
     outline: none;
     border: 1px solid var(--orange);
 }
-#sec-filters button {
+#sec-filters button, #sec-filters input[type=submit] {
     background-color: var(--orange);
     border: 1px solid var(--orange);
 }
