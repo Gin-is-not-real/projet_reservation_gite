@@ -20,7 +20,7 @@
             <h1>Admin Interface</h1>
         </header>
 
-        <section id="admin-main-section">
+        <section id="admin-container">
             <?php 
                 include 'voidForm.php'; 
             

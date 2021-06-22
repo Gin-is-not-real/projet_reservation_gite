@@ -1,46 +1,50 @@
-#admin-main-section #cards {
+
+#admin-container * {
+    /* border: 1px solid black; */
+}
+#admin-container {
+    width: 100vw;
+    max-width: 500px;
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 }
 
-form[id*=form-admin-edit-] {
+#admin-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+    align-content: center;
+}
+#admin-container section {
+    /* border: 3px solid green; */
+    background-color: grey;
+    border-radius: 10px;
+    margin: 2%;
 }
 
-#form-admin  {
-   
+.form-admin-content>div {
+    /* background-color: crimson; */
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+.form-admin-content input {
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+/*
+form[id*=form-admin-edit-] {
+    background-color: chocolate;
+
     display: flex;
-    flex-flow: row wrap;
-    width: 70vw;
-    margin: 2% auto;
-    margin-top: 50px;
+    flex-direction: column;
+    justify-content: center;
 }
-
-h3 {
-  
-   font-size: 50px;
-   margin-top: -60px;
-   text-align: center;
-}
-
-.card-form {
-    width: max-content;
-    margin: 0 auto;
-    display: flex;
-    padding: 2%;
-    justify-content: space-around;
-}
-
-.admin {
-    display: inline-block;
-    padding: 2%;
-    justify-content: space-around;
-    width: min-content;
-} 
-
+*/
 label {
     color: white;
 }
@@ -51,13 +55,11 @@ input {
     border: 1px solid white;
     padding: 2%;
 }
-
 select {
     background-color: rgba(194, 111, 81, 0.671);
     border-radius: 15px;
     border: 1px solid white;
 }
-
 .modif {
     display: flex;
     flex-direction: row;

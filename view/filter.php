@@ -1,4 +1,4 @@
-<?php require_once 'index.php'; ?>
+<!-- <?php require_once 'index.php'; ?> -->
 <section id="sec-filters">
     <form action="index.php?action=filter" method="post"> 
         <div>
@@ -12,7 +12,6 @@
             </select>
         </div>
 
-        <!-- <label for="categorie"> Catégorie </label>  <input class="inp-search" type="select" id="categorie"> -->
         <div>
             <label for="date-arrivee">Date d'arrivée </label>
             <input class="inp-search" type="date" id="date-arrivee" name="date-arrivee" >

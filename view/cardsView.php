@@ -5,7 +5,8 @@ require_once 'classes/Hebergement.php';
 <article id="cards">
         
     <?php
-    $heb = $manager->getHebergements();
+
+    $heb = $manager->getHebergementsWithFilter();
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
 

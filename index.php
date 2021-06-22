@@ -66,9 +66,11 @@ try {
 
         else if($_GET['action'] == 'filter') {
             print_r($_POST);
+            echo '<br>';
             $req = $manager->getHebergementsWithFilter();
             print_r($req);
 
+            require_once("view/homeView.php");
         }
 
     }

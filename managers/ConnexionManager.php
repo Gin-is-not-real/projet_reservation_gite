@@ -81,32 +81,33 @@ class HebergementManager extends ConnexionManager {
     }
 
     public function getHebergementsWithFilter() {
-        $arrayFilters = [];
+        //ok si on a mis une valeur
+        $categorie = isset($_POST['categorie']) ? $_POST['categorie'] : '';
 
-        if(isset($_POST['nbr_lits'])) {
-            $nb_lits = $_POST["nbr_lits"];
-            array_push($arrFilters, " nb_lits LIKE '$nb_lits' ");
+        $str = "SELECT * FROM $this->tablename WHERE ";
+
+        if(isset($_POST['categorie']) AND !empty($_POST['categorie'])) {
+            $cat = $_POST['categorie'];
+            $str .= "categorie LIKE '$cat' AND ";
         }
-        if(isset($_POST['nbr-sdb'])) {
+        if(isset($_POST['nbr-lits']) AND !empty($_POST['nbr-lits'])) {
+            $nb_lits = $_POST['nbr-lits'];
+            $str .= "nb_lits >= '$nb_lits' AND ";
+        }
+        if(isset($_POST['nbr-sdb']) AND !empty($_POST['nbr-sdb'])) {
             $nb_sdb = $_POST['nbr-sdb'];
-            array_push($arrFilters, " nb_sdb LIKE '$nb_sdb' ");
-
+            $str .= "nb_sdb >= '$nb_sdb' AND ";
         }
-        if(isset($_POST['categorie'])) {
-            $categorie = $_POST['categorie'];
-            array_push($arrFilters, " categorie LIKE '$categorie' ");
+        if(isset($_POST['prix']) AND !empty($_POST['prix'])) {
+            $prix = $_POST['prix'];
+            $str .= "prix >= '$prix' AND ";
         }
+        $str = substr($str, 0, -4);
 
-        $str = "";
-        foreach($arrFilters as $value) {
-            $str .= $value . ' AND ';
-        }
-        echo substr($str, 0, -3);
-
-            $categorie = 'maison';
         try {
-            // $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
-            $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
+            //ok
+            // $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE categorie LIKE '$categorie' ");
+            $req = $this->dbPDO->query($str);
         }
         catch (Exception $e) {
             die('erreur on list: ' . $e->getMessage());
