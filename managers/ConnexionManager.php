@@ -106,9 +106,7 @@ class HebergementManager extends ConnexionManager {
             $categorie = 'maison';
         try {
             // $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
-
             $req = $this->dbPDO->query("SELECT * FROM $this->tablename WHERE nb_sdb LIKE '$nb_sdb' AND nb_lits LIKE '$nb_lits' AND categorie LIKE '$categorie' ");
-
         }
         catch (Exception $e) {
             die('erreur on list: ' . $e->getMessage());
