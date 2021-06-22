@@ -18,21 +18,21 @@
         </div>
 
         <div>
-            <label for="nbr-lits"> Nombre de lits </label> 
+            <label for="nbr-lits">Nombre de lits </label> 
             <input class="inp-search" type="number" name="nbr-lits" min="0" id="nbr-lits">
         </div>
 
         <div>
-            <label for="date-depart"> Date de départ </label> 
+            <label for="date-depart">Date de départ </label> 
             <input class="inp-search" name="date-depart" type="date" id="date-depart">
         </div>
 
         <div>
-            <label for="nbr-sdb"> Nombre de salles de bain </label> 
+            <label for="nbr-sdb">Nombre de salles de bain </label> 
             <input class="inp-search" type="number" name="nbr-sdb" min="0" id="nbr-sdb">
         </div>
         <div>
-            <label for="prix"> Prix </label> <input class="inp-search" type="number"  name="prix" min="0" id="prix">
+            <label for="prix">Prix Max </label> <input class="inp-search" type="number"  name="prix" min="0" id="prix">
         </div>
         
         <div id="form-filters-div-button">

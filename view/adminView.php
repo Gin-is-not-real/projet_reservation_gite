@@ -17,17 +17,15 @@
     </header> -->
     <main>
         <header>
+            <a href="index.php">Retour</a>
             <h1>Admin Interface</h1>
         </header>
 
         <section id="admin-container">
             <?php 
                 include 'voidForm.php'; 
-            
                 include 'adminFormsView.php';
             ?>
-
-
         </section>
     </main>
 

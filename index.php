@@ -34,13 +34,12 @@ try {
 
         else if($_GET['action'] == 'modifier') {
             $manager->updateHebergement($_GET['id']);
-            //
-            // echo 'Les valeurs suivantes ont été modifiées: ';
-            // foreach ($_POST as $key => $value) {
-            //     echo  $key . ': ' . $value;
-            // }
-            // $manager->addHebergement($_POST);
-            // require_once("view/adminView.php");
+            
+            echo 'Les valeurs suivantes ont été modifiées: ';
+            foreach ($_POST as $key => $value) {
+                echo  $key . ': ' . $value;
+            }
+            require_once("view/adminView.php");
         }
 
         else if($_GET['action'] == 'supprimer') {
