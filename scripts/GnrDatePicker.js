@@ -83,7 +83,7 @@ class GnrDatePicker {
         let btnSend = document.querySelector(pickerId + ' #btn-send');
         btnSend.addEventListener('click', function() {
 
-            let formResa = document.querySelector('#form-resa');
+            let formResa = document.querySelector(pickerId +' #form-resa');
                 if(formResa.checkValidity() ) {
 
                     if(picker.inputDepart.value == undefined || picker.inputDepart.value == '')  {
