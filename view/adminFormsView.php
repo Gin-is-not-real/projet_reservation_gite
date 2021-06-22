@@ -5,7 +5,7 @@
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
 ?>
-
+<h3>Modifier, Supprimer</h3>
 <section class="card-form" id=<?= $hebergement->getId(); ?>>
 
     <form id="form-admin-edit-<?= $hebergement->getId(); ?>" action="index.php?action=modifier&id=<?= $hebergement->getId(); ?>"  method="post">
