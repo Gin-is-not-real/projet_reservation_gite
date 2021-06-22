@@ -71,3 +71,53 @@ function formatReservationsForDatePicker(arrivees, departs) {
     console.log(reservations);
 }
 
+/////////////////////////////////////////////////////////////////
+//ADMIN
+let formsEdit = document.querySelectorAll('.form-admin-edit');
+formsEdit.forEach(form => {
+    form.inputs = document.querySelectorAll('#' + form.id + ' input:not([type=button]');
+    // console.log('INPUTS: ', form.inputs);
+    // btn.style.display = 'none';
+
+    form.inputs.forEach(input => {
+        input.disabled = true;
+    })
+
+})
+let btnsEditOn = document.querySelectorAll('.btn-edit-on');
+let lastAbleOnEdit;
+
+btnsEditOn.forEach(btn => {
+    btn.addEventListener('click', function() {
+        let form = document.querySelector('#form-edit-' + this.id);
+
+        if(lastAbleOnEdit == undefined) {
+            lastAbleOnEdit = form;
+            lastAbleOnEdit.classList.add('on-edit');
+            lastAbleOnEdit.inputs.forEach(input => {
+                input.disabled = false;
+            })
+        }
+        else {
+            lastAbleOnEdit.classList.remove('on-edit');
+            lastAbleOnEdit.inputs.forEach(input => {
+                input.disabled = true;
+            })
+
+            if(lastAbleOnEdit == form) {
+                lastAbleOnEdit = undefined;
+            }
+        }
+        console.log(lastAbleOnEdit);
+    })
+})
+
+let btnsEditConfirm = document.querySelectorAll('.btn-edit-confirm');
+btnsEditConfirm.forEach(btn => {
+    btn.addEventListener('click', function() {
+        console.log(lastAbleOnEdit);
+        let form = lastAbleOnEdit;
+        lastAbleOnEdit = undefined;
+        form.submit();
+    })
+})

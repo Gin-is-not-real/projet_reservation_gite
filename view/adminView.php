@@ -31,5 +31,6 @@
         </section>
     </main>
 
+    <script src="scripts/interface.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
     require_once 'classes/Hebergement.php';
 ?>
 
-<section id="admin-edit-section">
     <header>
         <h3>Modifier, Supprimer</h3>
     </header>
@@ -12,11 +11,13 @@
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
 ?>
+ 
+<section id="admin-edit-section">
     <header>
         <h3><?= $hebergement->getIntitule(); ?></h3>
     </header>
 
-        <form id="form-admin-edit-<?= $hebergement->getId(); ?>" action="index.php?action=modifier&id=<?= $hebergement->getId(); ?>"  method="post">
+        <form class="form-admin-edit" id="form-edit-<?= $hebergement->getId(); ?>" action="index.php?action=modifier&id=<?= $hebergement->getId(); ?>"  method="post">
             <div class="form-admin-content">
                 <div>
                     <label for="intitule">intitule</label>
@@ -61,17 +62,14 @@
                 </div>
         
                 <div>
-                    <label for="localisation">localisation</label>
-                    <input type="text" name="localisation" id="" value=<?= $hebergement->getLocalisation(); ?>>
-                </div>
-        
-                <div>
                     <label for="prix">prix</label>
                     <input type="number" name="prix" id="" value=<?= $hebergement->getPrix(); ?> >
                 </div>
         
                 <div>
-                    <input type="submit" value="Modifier">
+                    <input type="button" class="btn-edit-on" id="<?= $hebergement->getId(); ?>" value="Modifier">
+                    <input type="button" class="btn-edit-confirm" id="<?= $hebergement->getId(); ?>" value="Valider">
+                    <!-- <input type="submit" value="Modifier"> -->
                 </div>
             </div>
         </form>
@@ -82,9 +80,9 @@
             </div>
         </form>
     </div>
+</section>
 
 
 <?php
 }
 ?>
-</section>
