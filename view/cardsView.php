@@ -5,9 +5,6 @@ require_once 'classes/Hebergement.php';
 <article id="cards">
     <?php
 
-if(isset($_POST)) {
-    print_r($_POST);
-}
     $heb = $manager->getHebergementsWithFilter();
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
@@ -20,6 +17,12 @@ if(isset($_POST)) {
                     echo '<input type="hidden" class="' . $key . '-' . $hebergement->getId() . '" value="' . $result . '">';
                 }
             }
+        }
+
+        if(isset($_GET['filter'])) {
+            echo '<script type="text/javascript">', 
+                'document.querySelector("#ancre-cardsView").click();',
+                '</script>';
         }
     ?>
 
@@ -76,8 +79,18 @@ if(isset($_POST)) {
                     </div>
 
                     <div>
+<<<<<<< HEAD
                             <?= $hebergement->getPrix(); ?> Euro/jours
                     </div>
+=======
+                        <figure>
+                        <img class="icon" src="static/img libre/euro2.png" alt="prix">
+                        </figure>
+                    </div>
+
+
+
+>>>>>>> 4c5636f431c6e95144f6e1220008d0273482b503
                 </footer>
 
             </div>
