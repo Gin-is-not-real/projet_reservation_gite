@@ -73,6 +73,15 @@ require_once 'classes/Hebergement.php';
                             <?= $hebergement->getNbSdb(); ?>
                         </div>
                     </div>
+
+                    <div>
+                        <figure>
+                        <img class="icon" src="static/img libre/euro2.png" alt="prix">
+                        </figure>
+                    </div>
+
+
+
                 </footer>
 
             </div>
