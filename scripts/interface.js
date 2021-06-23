@@ -82,7 +82,6 @@ formsEdit.forEach(form => {
     form.inputs.forEach(input => {
         input.disabled = true;
     })
-
 })
 let btnsEditOn = document.querySelectorAll('.btn-edit-on');
 let lastAbleOnEdit;

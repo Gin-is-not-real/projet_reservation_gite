@@ -50,26 +50,23 @@ try {
         }
 
         else if($_GET['action'] == 'add-resa') {
-            // print_r($_POST);
-            // print_r($_GET);
-
             $subject = 'confirmation de reservation';
             $message = 'Nous vous confirmons votre réservation pour le logement n° ' . $_GET['id'] . ' du ' . $_POST['calendar-depart'] . ' au ' . $_POST['calendar-arrivee'];
             mail($_POST['user-mail'], $subject, $message);
 
-            // $resaManager->addReservation($_POST);
             $resaManager->addReservation($_GET['id'], $_POST['calendar-depart'], $_POST['calendar-arrivee'], $_POST['user-mail']);
 
             header('Location: index.php');
         }
 
         else if($_GET['action'] == 'filter') {
-            print_r($_POST);
-            echo '<br>';
-            $req = $manager->getHebergementsWithFilter();
-            print_r($req);
+            // print_r($_POST);
+            // echo '<br>';
+            // $req = $manager->getHebergementsWithFilter();
+            // print_r($req);
 
             require_once("view/homeView.php");
+            // header('Location: index.php#main-section');
         }
 
     }

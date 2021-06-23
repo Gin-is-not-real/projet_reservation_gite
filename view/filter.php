@@ -1,6 +1,8 @@
 <!-- <?php require_once 'index.php'; ?> -->
 <section id="sec-filters">
     <form action="index.php?action=filter" method="post"> 
+    <!-- <form action="view/homeView.php" method="post">  -->
+
         <div>
             <label for="categorie"> Catégorie </label> 
             <select name="categorie" id="categorie">

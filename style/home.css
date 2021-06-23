@@ -16,6 +16,9 @@
     align-items: center;
     margin-bottom: 3%;
 }
+#main-section>header a {
+    display: grid;
+}
 #main-section>header h2 {
     text-transform: uppercase;
     color: var(--orange);
@@ -23,6 +26,8 @@
     padding: 1% 5%;
     border-radius: 10px;
     font-size: 1.5em;
+    width: max-content;
+    justify-self: center;
 }
 
 /* FILTERS */
