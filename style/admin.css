@@ -74,7 +74,8 @@ select {
     border: 1px solid white;
 }
 
-#admin-container select:disabled, #admin-container input:not([type=button])  {
+#admin-container select:disabled, #admin-container input:not([type=button]), textarea {
+    padding: 2%;
     background-color: rgba(194, 111, 81, 0.671);
     border-radius: 15px;
     border: 1px solid white;

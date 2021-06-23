@@ -38,32 +38,34 @@
         
                 <div>
                     <label for="localisation">localisation</label>
-                    <input type="text" name="localisation" id="" value=<?= $hebergement->getLocalisation(); ?>>
+                    <input type="text" name="localisation" value=<?= $hebergement->getLocalisation(); ?>>
                 </div>
         
                 <div>
                     <label for="photo">photo</label>
-                    <input type="text" name="photo" id="" value="static/img/maldive-500-700.png">
+                    <input type="text" name="photo" value="static/img/maldive-500-700.png">
                 </div>
         
                 <div>
                     <label for="description">description</label>
-                    <input type="text" name="description" id="" value=<?= $hebergement->getDescription(); ?>>
+                    <!-- <input type="text" name="description" value="<?= $hebergement->getDescription(); ?>"> -->
+                    <textarea name="description"><?= $hebergement->getDescription(); ?></textarea>
+
                 </div>
         
                 <div>
                     <label for="nb_lits">nb_lits</label>
-                    <input type="number" name="nb_lits" id="" value=<?= $hebergement->getNbLits(); ?>>
+                    <input type="number" name="nb_lits" value="<?= $hebergement->getNbLits(); ?>">
                 </div>
         
                 <div>
                     <label for="nb_sdb">nb_sdb</label>
-                    <input type="number" name="nb_sdb" id="" value=<?= $hebergement->getNbSdb(); ?>>
+                    <input type="number" name="nb_sdb" value="<?= $hebergement->getNbSdb(); ?>">
                 </div>
         
                 <div>
                     <label for="prix">prix</label>
-                    <input type="number" name="prix" id="" value=<?= $hebergement->getPrix(); ?> >
+                    <input type="number" name="prix" value="<?= $hebergement->getPrix(); ?>" >
                 </div>
         
                 <div>

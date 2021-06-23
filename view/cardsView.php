@@ -79,18 +79,8 @@ require_once 'classes/Hebergement.php';
                     </div>
 
                     <div>
-<<<<<<< HEAD
                             <?= $hebergement->getPrix(); ?> Euro/jours
                     </div>
-=======
-                        <figure>
-                        <img class="icon" src="static/img libre/euro2.png" alt="prix">
-                        </figure>
-                    </div>
-
-
-
->>>>>>> 4c5636f431c6e95144f6e1220008d0273482b503
                 </footer>
 
             </div>

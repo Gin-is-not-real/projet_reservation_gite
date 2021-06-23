@@ -98,20 +98,13 @@ class GnrDatePicker {
                             alert('Un mail va vous étre adresser, merci de verifier vos spams');
                             formResa.submit();
                         }
-                        
-
                     }
                 }
                 else {
                     alert('Veuillez remplir tout les champs ');
                 }
-
-            
-
         })
     }
-
-
 
     sendValueToActiveDateInput(dateStr) {
         //on cherche l'input actif et lui assigne la valeur envoyée par le picker
@@ -135,6 +128,16 @@ class GnrDatePicker {
         //on réajuste les valeur d'inputs
         this.inputArrivee.value = formatDateToStr(dateArrivee);
         this.inputDepart.value = formatDateToStr(dateDepart);
+
+        let priceDisplay = document.querySelector(this.parentId + ' #gnr-price');
+        let priceHidden = document.querySelector(this.parentId + ' #gnr-hidden-price');
+
+        console.log('time arrivee: ' + dateArrivee.getTime(), 'time depart: ', dateDepart.getTime(), 'price: ', priceHidden.value);
+        let nbrDays = dateDepart.getTime() - dateArrivee.getTime();
+
+        console.log((nbrDays /1000 /60/60/24) * priceHidden.value );
+        priceDisplay.value = (nbrDays /1000 /60/60/24) * priceHidden.value;
+        priceDisplay.textContent = priceDisplay.value + ' euro';
     }
 
     setMonthNum(num) {
@@ -198,7 +201,6 @@ class GnrDatePicker {
 
 //////////////////////////////////////////////////////
 //FUNCTIONS
-
 function formatMonth(number) {
     //on ajuste le num du mois car celui qu'on va recuperer partira de 0, et on veux aussi un format '01' et pas '1'
     let formatNum = number + 1;

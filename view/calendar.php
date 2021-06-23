@@ -49,7 +49,6 @@
                 <input type="button" class="calendar-case" id="day-29" value="29">
                 <input type="button" class="calendar-case" id="day-30" value="30">
                 <input type="button" class="calendar-case" id="day-31" value="31">
-
             </div>
         </div>
         <form id="form-resa" action="index.php?action=add-resa&id=<?= $hebergement->getId(); ?>" method='post'>
@@ -60,7 +59,7 @@
                     <input name="calendar-depart" id="calendar-arrivee" type="date" disabled=true required>
                 </div>
                 <div>
-                    <input type="button" id="btn-depart" value="départ"></button>
+                    <input type="button" id="btn-depart" value="depart"></button>
                     <input name="calendar-arrivee" id="calendar-depart" type="date" disabled=true required>
                 </div>
 
@@ -68,8 +67,14 @@
             </div>
 
             <div>
+                <input type="hidden" id="gnr-hidden-price" value="<?= $hebergement->getPrix(); ?>">
+                <p>Prix: </p>
+                <p id="gnr-price"></p>
+            </div>
+
+            <div>
                 <label for="user-mail">Entrez votre mail:</label>
-                <input type="email" name="user-mail" id="" required>
+                <input type="email" name="user-mail" required>
             </div>
             <div>
                 <input type="button" id="btn-send" value="envoyer"></button>

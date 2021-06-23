@@ -31,7 +31,7 @@
 
             <div>
                 <label for="description">description</label>
-                <input type="text" name="description" required>
+                <textarea name="description" required></textarea>
             </div>
 
             <div>
