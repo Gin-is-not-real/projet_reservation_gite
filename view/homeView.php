@@ -29,10 +29,14 @@
         
         <section id="main-section">
             <header>
-                <h2>
+
+            <a href="#main-section">
+            <h2>
                     Voir nos gîtes
                 </h2>
             </header>
+            </a>
+
 
             <?php
                 include "filter.php";

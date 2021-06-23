@@ -3,18 +3,19 @@ require_once 'classes/Hebergement.php';
 ?>
 
 <article id="cards">
-        
     <?php
-    $heb = $manager->getHebergements();
+
+if(isset($_POST)) {
+    print_r($_POST);
+}
+    $heb = $manager->getHebergementsWithFilter();
     while($data = $heb->fetch()) {
         $hebergement = new Hebergement($data);
 
         //la fonction pour recuperer les reservations par hebergements via req SQL
         $resa = $resaManager->getReservationsById($hebergement->getId());
         foreach ($resa as $value) {
-
             foreach ($value as $key => $result) {
-
                 if(is_string($key) && ($key == 'date_liberation' || $key == 'date_occupation')) {
                     echo '<input type="hidden" class="' . $key . '-' . $hebergement->getId() . '" value="' . $result . '">';
                 }
@@ -72,6 +73,10 @@ require_once 'classes/Hebergement.php';
                         <div>
                             <?= $hebergement->getNbSdb(); ?>
                         </div>
+                    </div>
+
+                    <div>
+                            <?= $hebergement->getPrix(); ?> Euro/jours
                     </div>
                 </footer>
 

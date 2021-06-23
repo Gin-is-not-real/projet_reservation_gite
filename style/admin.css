@@ -1,55 +1,71 @@
-#admin-main-section #cards {
+
+#admin-container * {
+    /* border: 1px solid black; */
+}
+#admin-container {
+    width: 100vw;
+    max-width: 500px;
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 }
 
-form[id*=form-admin-edit-] {
+#admin-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+    align-content: center;
 }
-
-#form-admin  {
-   
-    display: flex;
-    flex-flow: row wrap;
-    width: 70vw;
-    margin: 2% auto;
-    margin-top: 50px;
+#admin-container section {
+    background-color: rgba(128, 128, 128, 0.589);
+    border-radius: 10px;
+    margin: 2%;
 }
-
-h3 {
-  
-   font-size: 50px;
-   margin-top: -60px;
-   text-align: center;
-}
-
-.card-form {
-    width: max-content;
-    margin: 0 auto;
-    display: flex;
-    padding: 2%;
-    justify-content: space-around;
-}
-
-.admin {
-    display: inline-block;
-    padding: 2%;
-    justify-content: space-around;
-    width: min-content;
-} 
-
-label {
-    color: white;
-}
-
-input {
+#admin-container input {
     background-color: rgba(194, 111, 81, 0.671);
     border-radius: 15px;
     border: 1px solid white;
     padding: 2%;
+}
+
+.form-admin-content {
+    margin: 2%;
+}
+.form-admin-content>div {
+    /* background-color: crimson; */
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+#admin-edit-section>form {
+    margin: 2%;
+    border: 1px solid black;
+}
+#admin-edit-section input:not([type=button]) {
+}
+.form-admin-edit .btn-edit-confirm {
+    visibility: hidden;
+}
+
+.on-edit {
+    background-color: teal;
+}
+
+.on-edit input:not([type=button]) {
+        border: 2px solid orange;
+        color: black;
+}
+
+.on-edit .btn-edit-confirm {
+    border: 2px solid orange;
+    color: black;
+    visibility: visible;
+    display: block;
+
+}
+label {
+    color: white;
 }
 
 select {
@@ -58,18 +74,10 @@ select {
     border: 1px solid white;
 }
 
-.modif {
-    display: flex;
-    flex-direction: row;
-    padding: 3%;
-    justify-content: space-between;
-    width: 30vw;
-}
-
-.bouton  {
-    background-color:rgba(194, 111, 81, 0.671); 
-    display:flex;
+#admin-container select:disabled, #admin-container input:not([type=button])  {
+    background-color: rgba(194, 111, 81, 0.671);
     border-radius: 15px;
     border: 1px solid white;
-    padding: 10%;
+    color: black;
 }
+

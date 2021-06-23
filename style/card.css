@@ -99,7 +99,6 @@
 
 .card-footer {
     min-width: 50%;
-    max-width: 200px;
     grid-area: 3 / 1 / 4 / 3;
     display: flex;
     justify-content: space-around;
