@@ -113,6 +113,7 @@
         order: 10;
     }
 
+<<<<<<< HEAD
     #sec-filters input, #sec-filters select, #sec-filters button {
         background-color: var(--orange-input);
         border: none;
@@ -129,3 +130,36 @@
         margin: 2% auto;
     }
 }
+=======
+.footer {
+    background-color:rgba(138, 226, 226, 0.562);
+    
+    
+}
+.footer-suiveznous {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.lien {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+   
+    
+}
+
+.lien2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+small {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+>>>>>>> 16468c2a6a08e29a4c2b58ae6d14c057a1f633eb
