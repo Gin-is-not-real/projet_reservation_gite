@@ -30,7 +30,7 @@
         <section id="main-section">
             <header>
 
-            <a href="#main-section">
+            <a id="ancre-cardsView" href="#main-section">
             <h2>
                     Voir nos gîtes
                 </h2>

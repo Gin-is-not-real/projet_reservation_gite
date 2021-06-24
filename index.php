@@ -64,6 +64,7 @@ try {
             // echo '<br>';
             // $req = $manager->getHebergementsWithFilter();
             // print_r($req);
+            $_GET['filter'] = 'true';
 
             require_once("view/homeView.php");
             // header('Location: index.php#main-section');
