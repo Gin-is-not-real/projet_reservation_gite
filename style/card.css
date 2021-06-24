@@ -134,7 +134,10 @@
     height: var(--icon-size);
     padding: 0;
     margin-right: 20%;
+    margin-top: 10%;
+    margin-left: 20%;
 }
+<<<<<<< HEAD
 
 /* MEDIA  */
 @media screen and (min-width: 400px) {
@@ -183,3 +186,10 @@
 }
 
 
+=======
+.icon2 {
+    padding: 20%;
+}
+   
+    
+>>>>>>> 16468c2a6a08e29a4c2b58ae6d14c057a1f633eb
