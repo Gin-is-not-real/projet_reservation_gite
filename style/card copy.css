@@ -1,0 +1,120 @@
+#cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 2%;
+    width: 45vw;
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 400px;
+    background-color: var(--grey-card);
+}
+.card:hover {
+    /* border: 2px solid var(--orange); */
+}
+.card * {
+    /* border: 1px solid black; */
+}
+.card-header {
+    border-bottom: 1px solid var(--orange);
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    padding: 1%;
+    height: 25%;
+}
+.card-header div:nth-of-type(1) {
+    margin-bottom: 3%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-header div {
+    display: flex;
+    justify-content: space-around;
+    color: var(--orange);
+}
+.card-header ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 0.8em;
+}
+
+/*  */
+.card-content * {
+    /* border: 1px solid black; */
+}
+.card-content {
+    height: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 15%) repeat(2, 8%) 15%s;
+    grid-template-columns: repeat(2, 25%) repeat(2, 12%) 25%;
+    grid-template-rows: 2fr repeat(2, 1fr);
+
+}
+.card-content p {
+    padding: 5% 10%;
+    text-align: left;
+    font-size: 0.8em;  
+    max-height: 100%;  
+}
+.card-content > figure {
+    grid-area: 1 / 1 / 3 / 3;
+    padding: 0;
+    margin: 0;
+    width:  200px;
+    height: 200px;
+    min-width: 150px;
+    min-height: 150px;
+}
+.card-content img {
+    width:  100%;
+    height: 100%;
+}
+.card-description {
+    grid-area: 1 / 3 / 2 / 6;
+}
+.card-button-div {
+    grid-area: 2 / 3 / 3 / 6; 
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.card input[type=button] {
+    background-color: var(--orange);
+    width: 60%;
+    padding: 5% 0 0 20%;
+    text-transform: uppercase;
+    border: none;
+}
+
+.card-footer {
+    min-width: 50%;
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-footer div {
+    display: flex;
+    height: min-content;
+    justify-self: center;
+    margin: auto 0;
+}
+.card-footer figure {
+    padding: 0;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    margin-right: 20%;
+}
+

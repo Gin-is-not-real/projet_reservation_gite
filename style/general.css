@@ -28,6 +28,13 @@ body {
     --orange-input: rgba(238, 109, 59, 0.44); 
     --grey-card: #D7D7D7;
     --transparent-black: #00000075;
+    --transparent-grey: rgba(189, 189, 189, 0.809);
+
+    --header-height: 10vh;
+
+    --icon-size: 32px;
+
+    --radius: 5px;
 }
 
 body {
@@ -37,8 +44,8 @@ body {
 }
 
 body>header {
-    height: 7vh;
-    background-color: var(--transparent-black);
+    height: var(--header-height);
+    /* background-color: var(--transparent-black); */
     position: sticky;
     top: 0;
 }
@@ -46,6 +53,7 @@ body>footer {
     background-color: var(--transparent-black);
 }
 
+/* FILTERS */
 #sec-filters input, #sec-filters select, #sec-filters button {
     background-color: var(--orange-input);
     border: none;

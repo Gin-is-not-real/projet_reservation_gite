@@ -29,13 +29,10 @@
         
         <section id="main-section">
             <header>
-
-            <a id="ancre-cardsView" href="#main-section">
-            <h2>
-                    Voir nos gîtes
-                </h2>
+                <a id="ancre-cardsView" href="#main-section">
+                    <h2> Chercher un Gîte</h2>
+                </a>
             </header>
-            </a>
 
 
             <?php

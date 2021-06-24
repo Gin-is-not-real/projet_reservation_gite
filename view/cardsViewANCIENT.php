@@ -54,7 +54,6 @@ require_once 'classes/Hebergement.php';
                         <?= $hebergement->getDescription(); ?> 
                     </p>
                 </div>
-            </div>
 
                 <footer class="card-footer">
                     <div>
@@ -68,7 +67,7 @@ require_once 'classes/Hebergement.php';
 
                     <div>
                         <figure>
-                            <img class="icon" src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb" width="48px" height="auto">
+                            <img class="icon" src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb">
                         </figure>
                         <div>
                             <?= $hebergement->getNbSdb(); ?>
@@ -79,6 +78,8 @@ require_once 'classes/Hebergement.php';
                             <?= $hebergement->getPrix(); ?> Euro/jours
                     </div>
                 </footer>
+
+            </div>
 
         </section>
 

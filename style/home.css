@@ -9,14 +9,18 @@
     background-color: var(--transparent-black);
 }
 #main-section>header {
+    height: calc(var(--header-height) *2);
+    margin-top: - var(--header-height);
+    /* padding-top: var(--header-height); */
+
     text-align: center;
-    height: 10vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3%;
 }
 #main-section>header a {
+    width: 100%;
     display: grid;
 }
 #main-section>header h2 {
@@ -26,7 +30,6 @@
     padding: 1% 5%;
     border-radius: 10px;
     font-size: 1.5em;
-    width: max-content;
     justify-self: center;
 }
 
