@@ -1,2 +1,24 @@
+@media screen and (max-width: 400px) {
+    /* responsive du filtre */
+    #sec-filters {
+        background-color: red;
 
+        font-size: 0.5em;
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
 
+    }
+    #sec-filters form > div {
+        width: 100%;
+        margin: 1% auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #sec-filters input:focus, #sec-filters select:focus {
+        outline: none;
+        border: 1px solid var(--orange);
+    }
+}

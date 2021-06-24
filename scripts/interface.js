@@ -43,6 +43,7 @@ function focusOnTheSelectedCard(card) {
     }
     lastSelectedCard = card;
 
+
     // getReservationsDates(card);
     let picker = new GnrDatePicker(card.id, getReservationsDates(card));
     // let picker = createADatePicker(card.id, getReservationsDates(card));

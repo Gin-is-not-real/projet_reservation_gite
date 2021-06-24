@@ -53,32 +53,7 @@ body>footer {
     background-color: var(--transparent-black);
 }
 
-/* FILTERS */
-#sec-filters input, #sec-filters select, #sec-filters button {
-    background-color: var(--orange-input);
-    border: none;
-    color: white;
-
-    padding: 0 2%;
-    width: 40%;
-    min-width: 110px;
-    height: 30px;
-    border-radius: 15px;
-}
-#sec-filters input:focus, #sec-filters select:focus {
-    outline: none;
-    border: 1px solid var(--orange);
-}
-#sec-filters button, #sec-filters input[type=submit] {
-    background-color: var(--orange);
-    border: 1px solid var(--orange);
-}
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
 a {
     color: white;
     text-decoration: none;
 }
-

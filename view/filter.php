@@ -3,7 +3,7 @@
     <form action="index.php?action=filter" method="post"> 
     <!-- <form action="view/homeView.php" method="post">  -->
 
-        <div>
+        <div class="inp-container" id="cont-categorie">
             <label for="categorie"> Catégorie </label> 
             <select name="categorie" id="categorie">
                 <option value="">  </option>
@@ -14,26 +14,26 @@
             </select>
         </div>
 
-        <div>
+        <div class="inp-container" id="cont-date-arrivee">
             <label for="date-arrivee">Date d'arrivée </label>
             <input class="inp-search" type="date" id="date-arrivee" name="date-arrivee" >
         </div>
 
-        <div>
+        <div class="inp-container" id="cont-nbr-lits">
             <label for="nbr-lits">Nombre de lits </label> 
             <input class="inp-search" type="number" name="nbr-lits" min="0" id="nbr-lits">
         </div>
 
-        <div>
+        <div class="inp-container" id="cont-date-depart">
             <label for="date-depart">Date de départ </label> 
             <input class="inp-search" name="date-depart" type="date" id="date-depart">
         </div>
 
-        <div>
+        <div class="inp-container" id="cont-nbr-sdb">
             <label for="nbr-sdb">Nombre de salles de bain </label> 
             <input class="inp-search" type="number" name="nbr-sdb" min="0" id="nbr-sdb">
         </div>
-        <div>
+        <div class="inp-container" id="cont-prix">
             <label for="prix">Prix Max </label> <input class="inp-search" type="number"  name="prix" min="0" id="prix">
         </div>
         

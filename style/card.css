@@ -137,13 +137,14 @@
 }
 
 /* MEDIA  */
-@media (min-width: 400px) {
+@media screen and (min-width: 400px) {
     .card {
         min-width: 400px;
     }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
+    /*responsive des cartes */
     .card {
         width: 95vw;
         min-width: 200px;
@@ -176,5 +177,9 @@
         width:  24px !important;
         height: 24px !important;
     }
-    /* gerer le responsive des cartes */
+
+
+
 }
+
+
