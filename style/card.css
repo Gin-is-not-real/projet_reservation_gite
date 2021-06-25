@@ -133,9 +133,6 @@
     width: var(--icon-size);
     height: var(--icon-size);
     padding: 0;
-    margin-right: 20%;
-    margin-top: 10%;
-    margin-left: 20%;
 }
 
 /* MEDIA  */
@@ -185,3 +182,8 @@
 }
 
 
+.icon2 {
+    padding: 20%;
+}
+   
+    

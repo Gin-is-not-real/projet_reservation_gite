@@ -106,6 +106,8 @@ class GnrDatePicker {
         })
     }
 
+
+
     sendValueToActiveDateInput(dateStr) {
         //on cherche l'input actif et lui assigne la valeur envoyée par le picker
         let active = this.btnArrivee.classList.contains('active') ? this.inputArrivee : this.inputDepart;
@@ -124,6 +126,12 @@ class GnrDatePicker {
                 dateDepart.setDate(dateArrivee.getDate() + 1);
             }
         }
+        this.findIntervalInDays(dateArrivee,  dateDepart, this.monthNum);
+
+        /*
+            TODO
+            recuperer les dates des inputs pour les afficher sur le calendar
+        */
 
         //on réajuste les valeur d'inputs
         this.inputArrivee.value = formatDateToStr(dateArrivee);
@@ -167,16 +175,29 @@ class GnrDatePicker {
             day.disabled = false;
         })
     }
-    
+
+    /*
+        TODO
+        getNbrDaysInMonth()
+        call this function for return the number of days of the current month, and hidde the 31
+        if is necessary
+    */
+
     madeUnablesDays() {
         this.unablesDays.forEach(unab => {
             this.findIntervalInDays(unab.arr, unab.dep, this.monthNum);
         })
     }
 
+    /*
+        TODO
+        clone this function or pass a param for able selection of reservation range
+        there will affect style elements but not disable 
+    */
     findIntervalInDays(arr, dep, monthNum) {
         let firstDay, lastDay;
     
+
         if(arr.getMonth() === monthNum) {
             firstDay = arr.getDate();
             lastDay = (dep.getMonth()) === monthNum ? dep.getDate() : 31;
@@ -217,4 +238,8 @@ function formatDateToStr(date) {
     let dateStr = date.getFullYear().toString(10) + '-' + formatMonth(date.getMonth()).toString(10) + '-' + formatDay(date.getDate()).toString(10);
     // console.log(dateStr)
     return dateStr;
+}
+
+function getNbrDaysInMonth(date){
+    return new Date(date.getFullYear(), date.getMonth()+1, -1).getDate()+1;
 }

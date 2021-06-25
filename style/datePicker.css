@@ -9,20 +9,11 @@ html {
 .reservation-picker {
     display: none;
     background-color: brown;
-    width: 35vw;
-    max-width: 300px;
+    /* width: 35vw; */
+    max-width: 400px;
     border-radius: 10px;
 }
-.focused-card + .reservation-picker {
-    position: fixed;
-    top: 25%;
-    right: 10%;
-    width: 40vw;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 #date-picker {
     width: max-content;
     width: 80%;
@@ -161,3 +152,12 @@ input[type=email] {
     padding: 2%;
 }
 
+.focused-card + .reservation-picker {
+    position: fixed;
+    bottom: 5%;
+    width: 50vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,8 +1,6 @@
-@media screen and (max-width: 400px) {
-    /* responsive du filtre */
+ /* @media screen and (max-width: 400px) {
+  
     #sec-filters {
-        background-color: red;
-
         font-size: 0.5em;
         width: 95vw;
         display: flex;
@@ -21,4 +19,4 @@
         outline: none;
         border: 1px solid var(--orange);
     }
-}
+}  */

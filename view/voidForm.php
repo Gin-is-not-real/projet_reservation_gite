@@ -1,7 +1,7 @@
 <section id="admin-add-section">
     <form class="form-admin" id="form-admin-add" action="index.php?action=ajouter" method="post">
         <header>
-            <H3>Ajouter</H3>
+            <h3>Ajouter</h3>
         </header>
 
         <div class="form-admin-content">

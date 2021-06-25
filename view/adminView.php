@@ -17,7 +17,9 @@
     </header> -->
     <main>
         <header>
-            <a href="index.php">Retour</a>
+            <div class="a-adminer" id="go-admin">
+                <a href="index.php">Retour</a>
+            </div>
             <h1>Admin Interface</h1>
         </header>
 
@@ -30,5 +32,6 @@
     </main>
 
     <script src="scripts/interface.js"></script>
+    <script src="scripts/admin.js"></script>
 </body>
 </html>
