@@ -32,5 +32,6 @@
     </main>
 
     <script src="scripts/interface.js"></script>
+    <script src="scripts/admin.js"></script>
 </body>
 </html>
