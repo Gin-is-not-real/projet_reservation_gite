@@ -66,7 +66,7 @@
                 <input type="submit" id="sub-form-dates" name="sub-form-dates" hidden>
             </div>
 
-            <div>
+            <div id="div-price">
                 <input type="hidden" id="gnr-hidden-price" value="<?= $hebergement->getPrix(); ?>">
                 <p>Prix: </p>
                 <p id="gnr-price"></p>

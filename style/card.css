@@ -1,4 +1,5 @@
 #cards {
+    position: relative;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -17,12 +18,13 @@
     height: max-content;
     max-height: 400px;
     margin: 2%;
-
     border-radius: var(--radius);
     border: var(--border);
     overflow: hidden;
     /* background-color: var(--grey-card); */
+
     background-color: var(--transparent-black);
+
     display: flex;
     flex-direction: column;
 }
@@ -30,10 +32,10 @@
     width: var(--icon-size);
     height: var(--icon-size);
 }
+
 /* HEADER */
 .card-header {
     border-bottom: var(--border);
-
     /* background-color: rgba(248, 81, 30, 0.665); */
     background-color: var(--transparent-grey);
     width: 100%;

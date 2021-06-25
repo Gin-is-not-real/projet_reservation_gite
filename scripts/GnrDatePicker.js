@@ -26,7 +26,7 @@ class GnrDatePicker {
         this.initListeners(parentId);
         this.updateMonth(new Date().getMonth());
 
-        console.log(parentId, this);
+        // console.log(parentId, this);
     }
 
     initListeners(pickerId) {
@@ -106,8 +106,6 @@ class GnrDatePicker {
         })
     }
 
-
-
     sendValueToActiveDateInput(dateStr) {
         //on cherche l'input actif et lui assigne la valeur envoyée par le picker
         let active = this.btnArrivee.classList.contains('active') ? this.inputArrivee : this.inputDepart;
@@ -162,6 +160,7 @@ class GnrDatePicker {
             this.madeUnablesDays();
         }
     }
+
     restartElements() {
         let monthFormatNum = formatMonth(this.monthNum);
         //on change les valeurs affichée en html et on actualise la valeur du champ date:active
@@ -207,7 +206,7 @@ class GnrDatePicker {
     }
     
     affectElements(interval) {
-        console.log('will affect ' , interval);
+        // console.log('will affect ' , interval);
         //boucle for: on part du premier jour, on s'arrete au dernier, et z chaque tour on agit sur le DOM
         for(let i = interval.firstDay; i <= interval.lastDay; i++) {
             

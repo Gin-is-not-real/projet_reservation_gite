@@ -88,6 +88,11 @@ html {
     color: var(--orange);
     border: 1px solid black;
 }
+#div-price {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .reservation-picker input[type=date]:disabled {
     opacity: 1;
     background-color: var(--transblack);
@@ -138,12 +143,10 @@ button, input[type=submit] {
     background-color: var(--orange);
     color: black;
 }
-.active + input[type=date]:disabled{
+.active + input[type=date]:disabled {
     border: 2px solid var(--orange);
-
     color: black;
     color: orange;
-
 }
 input[type=email] {
     border: 2px solid var(--orange);
@@ -154,8 +157,9 @@ input[type=email] {
 
 .focused-card + .reservation-picker {
     position: fixed;
-    bottom: 5%;
     width: 50vw;
+    height: max-content;
+    top: 30%;
 
     display: flex;
     flex-direction: column;
