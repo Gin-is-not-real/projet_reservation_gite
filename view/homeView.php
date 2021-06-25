@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/interface.css">
     <link rel="stylesheet" href="style/datePicker.css">
-    <link rel="stylesheet" href="style/media_queries.css">
+    <!-- <link rel="stylesheet" href="style/media_queries.css"> -->
 
     <title>Home</title>
 </head>
+
 <body>
     <header>
-        <a href="index.php?action=to-admin">Admin</a>
+        <div class="a-adminer" id="go-admin">
+            <a href="index.php?action=to-admin">Admin</a>
+        </div>
     </header>
 
     <main>
@@ -48,18 +51,18 @@
     <p class="footer-suiveznous"> Suivez-nous! </p>
     <div class="lien">
     
-            <a href="https://github.com/Alice58000" target="_blank"><img src="static/icons/github.png" alt="git" width="70px"></a>
+            <a href="https://github.com/Alice58000" target="_blank"><img src="static/icons/github.png" alt="git" width="48px"></a>
 
-            <a href="https://github.com/Gin-is-not-real" target="_blank"><img src="static/icons/github.png" alt="git" width="70px"></a>
+            <a href="https://github.com/Gin-is-not-real" target="_blank"><img src="static/icons/github.png" alt="git" width="48px"></a>
     </div>
     <div class="lien2">
 
             <a href="https://www.linkedin.com/in/alice-finot/" target="_blank"><img src="static/icons/logo-linkedin.png" alt="link"
-                    width="70px"></a>
+                    width="48px"></a>
   
 
             <a href="https://www.linkedin.com/in/nina-pariat-6b554920a/" target="_blank"><img src="static/icons/logo-linkedin.png" alt="link"
-                    width="70px"></a>
+                    width="48px"></a>
     </div>
 
     <small> &copy; Copyright 2021 </small> 

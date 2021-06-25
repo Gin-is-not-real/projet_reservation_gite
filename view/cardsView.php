@@ -58,33 +58,31 @@ require_once 'classes/Hebergement.php';
 
                 <footer class="card-footer">
                     <div>
-                        <figure>
-                            <img class="icon" src="static/icons/yellow_single-room_icon-icons.com_59593.png" alt="nbr de lits" width="48px" height="auto" >
-                        </figure>
                         <div>
                             <?= $hebergement->getNbLits(); ?>
                         </div>
+                        <figure>
+                            <img class="icon" src="static/icons/yellow_single-room_icon-icons.com_59593.png" alt="nbr de lits" width="48px" height="auto" >
+                        </figure>
                     </div>
 
                     <div>
-                        <figure>
-                            <img class="icon" src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb" width="48px" height="auto">
-                        </figure>
                         <div>
                             <?= $hebergement->getNbSdb(); ?>
                         </div>
+                        <figure>
+                            <img class="icon" src="static/icons/yellow_shower_01_icon-icons.com_59592.png" alt="nbr de sdb" width="48px" height="auto">
+                        </figure>
                     </div>
 
 
                     <div>
-
+                        <div> 
+                            <?= $hebergement->getPrix(); ?>
+                        </div>
                         <figure>
                             <img class="icon2" src="static/icons/euro3.png" alt="euro">
                         </figure>
-                        <!-- <div>
-
-                            <?= $hebergement->getPrix(); ?> Euro/jours
-                        </div> -->
                     </div>
                 </footer>
 

@@ -48,12 +48,34 @@ body>header {
     /* background-color: var(--transparent-black); */
     position: sticky;
     top: 0;
+
+    display: flex;
+    justify-content: right;
 }
+body>header div {
+
+}
+
 body>footer {
     background-color: var(--transparent-black);
 }
+.a-adminer {
+    margin: 2%;
+    width: 42px;
+    height: 42px;
 
+    background-color: var(--transparent-black);
+    border-radius: 100%;
+    border: 1px solid orange;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a-adminer a {
+    color: orange;
+    text-decoration: none;
+}
 a {
-    color: white;
     text-decoration: none;
 }

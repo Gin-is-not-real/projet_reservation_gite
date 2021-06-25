@@ -5,8 +5,10 @@
 .focused-card {
     border: 2px solid var(--orange);
     position: fixed;
-    top: 20%;
-    left: 10%;
+    /* top: 20%;
+    left: 10%; */
+
+    top: 5%;
 }
 
 #card-close {
