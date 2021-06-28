@@ -102,6 +102,14 @@ class HebergementManager extends ConnexionManager {
             $prix = $_POST['prix'];
             $str .= "prix >= '$prix' AND ";
         }
+
+        if(isset($_POST['photo']) AND !empty($_POST['photo'])) {
+            $photo = $_POST['photo'];
+            $str .= "photo >= '$photo' AND ";
+        }
+
+
+
         $str = substr($str, 0, -4);
 
         try {
