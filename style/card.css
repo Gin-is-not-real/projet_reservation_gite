@@ -32,6 +32,11 @@
     width: var(--icon-size);
     height: var(--icon-size);
 }
+.card .icon-euro {
+    width: 25px;
+    height: 25px;
+}
+
 
 /* HEADER */
 .card-header {

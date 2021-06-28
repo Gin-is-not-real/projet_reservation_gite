@@ -1,7 +1,16 @@
-<?php
-    require_once 'classes/Hebergement.php';
+ 
+ <?php
+require_once 'classes/Hebergement.php';
 ?>
+ 
+<?php
+session_start();
 
+if(!isset($_SESSION['acces']))
+header('Location:view/connexion.php');
+?> 
+
+    
     <header>
         <h3>Modifier, Supprimer</h3>
     </header>
@@ -43,7 +52,7 @@
         
                 <div>
                     <label for="photo">photo</label>
-                    <input type="text" name="photo" value="static/img/maldive-500-700.png">
+                    <input type="text" name="photo" value=<?= $hebergement->getPhoto(); ?>>
                 </div>
         
                 <div>
@@ -88,3 +97,4 @@
 <?php
 }
 ?>
+ 

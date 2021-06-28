@@ -50,6 +50,25 @@ class ConnexionManager {
         $this->basename=$basename;
     }
 }
+//////////////////////////////////////////////////////////// 
+class AdminManager extends ConnexionManager {
+    protected $tableadmin;
+
+    function __construct($tableadmin) {
+        parent::__construct($hostname, $username, $password, $basename);
+        $this->tablename=$tablename;
+    }
+    public function getUtilisateur($id) {
+        try {
+            $req = $this->dbBDO->query("SELECT * FROM $this->tableadmin WHERE id_utilisateur=" . $id);
+        }
+        catch (Exception $e) {
+            die('erreur on list:' . $e->getMessage());
+        }
+        return $req;
+    }
+}
+
 
 //////////////////////////////////////////////////////////// 
 class HebergementManager extends ConnexionManager {

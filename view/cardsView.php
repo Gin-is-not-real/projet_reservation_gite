@@ -81,7 +81,7 @@ require_once 'classes/Hebergement.php';
                             <?= $hebergement->getPrix(); ?> 
                         </div> 
                         <figure>
-                            <img class="icon" src="static/icons/euro3.png" alt="euro">
+                            <img class="icon icon-euro" src="static/icons/euro3.png" alt="euro">
                         </figure>
 
                     </div>
