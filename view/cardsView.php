@@ -46,7 +46,7 @@ require_once 'classes/Hebergement.php';
 
             <div class="card-content">
                 <figure>
-                    <img src="static/img/maldive-500-700.png" alt="image de gite">
+                    <img src="<?= $hebergement->getPhoto(); ?>" alt="image de gite">
                 </figure>
 
                 <div class="card-description">

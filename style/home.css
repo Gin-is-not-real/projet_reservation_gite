@@ -133,26 +133,54 @@
 /* FOOTER */
 .footer {
     background-color:rgba(138, 226, 226, 0.562);
+   
 }
+
 .footer-suiveznous {
+    padding: 2%;
     display: flex;
     justify-content: center;
+    
+}
+
+
+#grdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  
+   
+}
+
+a {
+    margin-top: 20%;
+    margin-bottom: 20%;
 }
 
 .lien {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15%;
+
+  
 }
 
 .lien2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 5%;
+
+  
+ 
 }
+
 
 small {
     display: flex;
     justify-content: center;
-    background-color: aqua;
 }

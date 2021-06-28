@@ -49,22 +49,28 @@
 
     <footer class="footer">
     <p class="footer-suiveznous"> Suivez-nous! </p>
+    <div id="grdiv">
     <div class="lien">
     
-            <a href="https://github.com/Alice58000" target="_blank"><img src="static/icons/github.png" alt="git" width="48px"></a>
+            <img src="static/icons/github.png" alt="git" width="48px">
+            <a  href="https://github.com/Alice58000" target="_blank"> github Alice58000</a>
 
-            <a href="https://github.com/Gin-is-not-real" target="_blank"><img src="static/icons/github.png" alt="git" width="48px"></a>
+
+            <img src="static/icons/github.png" alt="git" width="48px">
+            <a href="https://github.com/Gin-is-not-real" target="_blank">github Gin-is-not-real</a>
     </div>
+
     <div class="lien2">
 
-            <a href="https://www.linkedin.com/in/alice-finot/" target="_blank"><img src="static/icons/logo-linkedin.png" alt="link"
-                    width="48px"></a>
+
+            <img src="static/icons/logo-linkedin.png" alt="link" width="48px">
+            <a href="https://www.linkedin.com/in/alice-finot/" target="_blank">Linkedin Alice FINOT</a>
   
 
-            <a href="https://www.linkedin.com/in/nina-pariat-6b554920a/" target="_blank"><img src="static/icons/logo-linkedin.png" alt="link"
-                    width="48px"></a>
+            <img src="static/icons/logo-linkedin.png" alt="link" width="48px">
+            <a href="https://www.linkedin.com/in/nina-pariat-6b554920a/" target="_blank">Linkedin Nina PARIAT</a>
     </div>
-
+    </div>
     <small> &copy; Copyright 2021 </small> 
 
     </footer>
