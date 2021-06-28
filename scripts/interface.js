@@ -53,6 +53,8 @@ function manageClassNames(card) {
 }
 
 function applyFocus() {
+    document.querySelector('#sec-filters').style.opacity = '0.3';
+
     cards.forEach(card => {
         if(card.classList.contains('focused-card')) {
             card.style.border = '2px solid red';
@@ -68,6 +70,8 @@ function applyFocus() {
 }
 
 function resetStyle() {
+    document.querySelector('#sec-filters').style.opacity = '1';
+
     cards.forEach(card => {
         card.style.opacity = '1';
     });

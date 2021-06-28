@@ -72,11 +72,10 @@
                 <p id="gnr-price"></p>
             </div>
 
-            <div>
+            <div id="div-mail">
                 <label for="user-mail">Entrez votre mail:</label>
                 <input type="email" name="user-mail" required>
-            </div>
-            <div>
+
                 <input type="button" id="btn-send" value="envoyer"></button>
                 <input type="submit" id="sub-send" hidden></button>
             </div>
