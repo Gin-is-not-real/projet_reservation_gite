@@ -42,10 +42,10 @@ function manageClassNames(card) {
         lastSelectedCard.classList.add('unfocused-card');
         // console.log('lastSelectedCard != undefined');
     }
-    // if(lastSelectedCard == card) {
-    //     console.log('lastSelectedCard == card');
-    // }
-    else {
+    if(lastSelectedCard == card) {
+        // console.log('lastSelectedCard == card');
+    }
+    if(lastSelectedCard != card) {
         card.classList.remove('unfocused-card');
         card.classList.add('focused-card');
         // console.log('else');
