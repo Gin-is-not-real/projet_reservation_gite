@@ -12,7 +12,9 @@
 
 .card {
     box-sizing: border-box;
-    width: 45vw;
+    /* width: 45vw; */
+    width: 500px;
+
     /* min-width: 350px; */
     max-width: 500px;
     height: max-content;
@@ -55,7 +57,6 @@
     display: flex;
     justify-content: space-around;
     color: var(--orange);
-    color: black;
 }
 .card-header ul {
     width: 50%;

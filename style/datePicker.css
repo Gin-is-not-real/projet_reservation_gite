@@ -3,8 +3,8 @@ html {
     --border-radius: 100%;
     --transblack: rgba(0, 0, 0, 0.535);
 }
-.reservation-picker * {
-    /* border: 1px solid chartreuse; */
+.reservation-picker > * {
+    /* width: 49%; */
 }
 .reservation-picker {
     display: none;
@@ -24,9 +24,10 @@ html {
 }
 #date-picker>header {
     width: 70%;
-
     padding: 0 2%;
     margin: 2% auto;
+    text-align: center;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,14 +72,16 @@ html {
     margin: 2% auto;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1%;
+
 }
 #div-inputs div {
     display: flex;
     flex-direction: column;
 
-    padding: 2%;
-    width: 45%;
+    /* padding: 2%; */
+    width: 95%;
 }
 #div-inputs div * {
     padding: 4%;
@@ -95,9 +98,12 @@ html {
     width: 100%;
     display: flex;
     /* flex-direction: column; */
-    justify-content: center;
-    gap: 10%
-
+    justify-content: space-around;
+    /* gap: 10%; */
+}
+#calendar-arrivee, #calendar-depart {
+    padding: 2%;
+    /* font-size: 0.5em; */
 }
 .reservation-picker input[type=date]:disabled {
     opacity: 1;
@@ -106,13 +112,14 @@ html {
     border-radius: 10px;
     border: 2px solid transparent;
 }
+
 #btn-arrivee, #btn-depart {
     border-radius: 10px;
     background-color: var(--transblack);
     color: var(--orange);
     border: 1px solid black;
 }
-.active#btn-arrivee, .active#btn-depart {
+.active#btn-arrivee, .active#btn-depart, #btn-send {
     border-radius: 10px;
     background-color: var(--transblack);
     color: var(--orange);
@@ -133,6 +140,7 @@ button, input[type=submit] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2%;
 }
 
 #div-inputs + div {

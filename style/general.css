@@ -73,6 +73,7 @@ body>footer {
     align-items: center;
 }
 .a-adminer a {
+    z-index: 50;
     color: orange;
     text-decoration: none;
 }
