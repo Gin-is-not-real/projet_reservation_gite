@@ -20,7 +20,7 @@ btnsClose.forEach(btn => {
             resetStyle();
 
             lastSelectedCard = undefined;
-            console.log('close', lastSelectedCard);
+            // console.log('close', lastSelectedCard);
         }, 300);
     })
 })
@@ -40,15 +40,15 @@ function manageClassNames(card) {
     if(lastSelectedCard != undefined && lastSelectedCard != card) {
         lastSelectedCard.classList.remove('focused-card');
         lastSelectedCard.classList.add('unfocused-card');
-        console.log('lastSelectedCard != undefined');
+        // console.log('lastSelectedCard != undefined');
     }
-    if(lastSelectedCard == card) {
-        console.log('lastSelectedCard == card');
-    }
+    // if(lastSelectedCard == card) {
+    //     console.log('lastSelectedCard == card');
+    // }
     else {
         card.classList.remove('unfocused-card');
         card.classList.add('focused-card');
-        console.log('else');
+        // console.log('else');
     }
 }
 
@@ -59,12 +59,12 @@ function applyFocus() {
         if(card.classList.contains('focused-card')) {
             card.style.border = '2px solid red';
             card.style.opacity = '1';
-            console.log(card.id + " " + card.className + " FOCUS");
+            // console.log(card.id + " " + card.className + " FOCUS");
         }
         else {
             card.style.border = '1px solid black';
             card.style.opacity = '0.3';
-            console.log(card.id + " " + card.className + " UNFOCUS");
+            // console.log(card.id + " " + card.className + " UNFOCUS");
         }
     })
 }
