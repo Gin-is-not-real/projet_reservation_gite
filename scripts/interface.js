@@ -96,7 +96,6 @@ function formatReservationsForDatePicker(arrivees, departs) {
     }
 
     return reservations;
-    console.log(reservations);
 }
 
 

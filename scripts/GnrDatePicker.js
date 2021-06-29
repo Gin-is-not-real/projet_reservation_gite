@@ -209,7 +209,7 @@ class GnrDatePicker {
         
         this.dayElements.forEach(day => {
 
-            if(day.value <= nbrDays) {
+            if(day.value <= getNbrDaysInMonth(this.dateArrivee)) {
                 day.style.display = 'block';
             }
             else {
