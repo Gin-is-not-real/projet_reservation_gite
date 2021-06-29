@@ -59,6 +59,7 @@ body>header div {
 body>footer {
     background-color: var(--transparent-black);
 }
+
 .a-adminer {
     margin: 2%;
     width: 42px;
@@ -71,8 +72,10 @@ body>footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 50;
 }
 .a-adminer a {
+    z-index: 50;
     color: orange;
     text-decoration: none;
 }

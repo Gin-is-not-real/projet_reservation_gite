@@ -36,11 +36,11 @@ require_once 'classes/Hebergement.php';
 
                 <div>
                     <h4><?= $hebergement->getCategorie(); ?></h4>
-                    <ul>
+                    <!-- <ul>
                         <li>tag 1</li>
                         <li>tag 2</li>
                         <li>tag 5</li>
-                    </ul>
+                    </ul> -->
                 </div>
             </header>
 

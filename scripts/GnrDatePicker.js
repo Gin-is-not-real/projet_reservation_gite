@@ -25,7 +25,6 @@ class GnrDatePicker {
         this.unablesDays = unables;
         this.initListeners(parentId);
         this.updateMonth(new Date().getMonth());
-
         // console.log(parentId, this);
     }
 
@@ -124,26 +123,24 @@ class GnrDatePicker {
                 dateDepart.setDate(dateArrivee.getDate() + 1);
             }
         }
-        this.findIntervalInDays(dateArrivee,  dateDepart, this.monthNum);
-
-        /*
-            TODO
-            recuperer les dates des inputs pour les afficher sur le calendar
-        */
 
         //on réajuste les valeur d'inputs
         this.inputArrivee.value = formatDateToStr(dateArrivee);
         this.inputDepart.value = formatDateToStr(dateDepart);
+        this.dateArrivee = dateArrivee;
+        this.dateDepart = dateDepart;
 
         let priceDisplay = document.querySelector(this.parentId + ' #gnr-price');
         let priceHidden = document.querySelector(this.parentId + ' #gnr-hidden-price');
 
-        console.log('time arrivee: ' + dateArrivee.getTime(), 'time depart: ', dateDepart.getTime(), 'price: ', priceHidden.value);
+        // console.log('time arrivee: ' + dateArrivee.getTime(), 'time depart: ', dateDepart.getTime(), 'price: ', priceHidden.value);
         let nbrDays = dateDepart.getTime() - dateArrivee.getTime();
 
-        console.log((nbrDays /1000 /60/60/24) * priceHidden.value );
+        // console.log((nbrDays /1000 /60/60/24) * priceHidden.value );
         priceDisplay.value = (nbrDays /1000 /60/60/24) * priceHidden.value;
         priceDisplay.textContent = priceDisplay.value + ' euro';
+
+        this.styleActiveDayElements();
     }
 
     setMonthNum(num) {
@@ -154,11 +151,26 @@ class GnrDatePicker {
 
     updateMonth(num) {
         this.setMonthNum(num);
+
         this.restartElements();
+        this.styleActiveDayElements();
 
         if(this.unablesDays != undefined) {
             this.madeUnablesDays();
         }
+    }
+
+    styleActiveDayElements() {
+        this.dayElements.forEach(day => {
+            if(day.value >= this.dateArrivee.getDate() && day.value <= this.dateDepart.getDate() ) {
+                day.style.backgroundColor = "brown";
+                day.style.color = "orange";
+            }
+            else {
+                day.style.backgroundColor = "lightgrey";
+                day.style.color = "black";
+            }
+        })
     }
 
     restartElements() {
@@ -166,12 +178,20 @@ class GnrDatePicker {
         //on change les valeurs affichée en html et on actualise la valeur du champ date:active
         this.title.textContent = monthFormatNum;
         this.sendValueToActiveDateInput('2021-' + monthFormatNum + "-01");
-    
         //on remet le style des elements a zéro et on les réactive
+        let nbrDays = getNbrDaysInMonth(new Date(this.inputArrivee.value));
+
         this.dayElements.forEach(day => {
-            day.style.backgroundColor = "lightgrey";
+            // day.style.backgroundColor = "lightgrey";
             day.style.opacity = "1";
             day.disabled = false;
+
+            if(day.value <= nbrDays) {
+                day.style.display = 'block';
+            }
+            else {
+                day.style.display = 'none';
+            }
         })
     }
 
@@ -186,6 +206,16 @@ class GnrDatePicker {
         this.unablesDays.forEach(unab => {
             this.findIntervalInDays(unab.arr, unab.dep, this.monthNum);
         })
+        
+        this.dayElements.forEach(day => {
+
+            if(day.value <= nbrDays) {
+                day.style.display = 'block';
+            }
+            else {
+                day.style.display = 'none';
+            }
+        })
     }
 
     /*
@@ -195,7 +225,6 @@ class GnrDatePicker {
     */
     findIntervalInDays(arr, dep, monthNum) {
         let firstDay, lastDay;
-    
 
         if(arr.getMonth() === monthNum) {
             firstDay = arr.getDate();
@@ -241,4 +270,5 @@ function formatDateToStr(date) {
 
 function getNbrDaysInMonth(date){
     return new Date(date.getFullYear(), date.getMonth()+1, -1).getDate()+1;
+    // return new Date(picker.inputArrivee.value.getFullYear(), picker.monthNum +1, -1).getDate()+1;
 }
