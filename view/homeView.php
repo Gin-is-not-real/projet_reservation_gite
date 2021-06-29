@@ -18,7 +18,8 @@
 <body>
     <header>
         <div class="a-adminer" id="go-admin">
-            <a href="index.php?action=to-admin">Admin</a>
+            <!-- <a href="index.php?action=to-admin">Admin</a> -->
+            <a href="view/connexion.php">Admin</a>
         </div>
     </header>
 

@@ -1,3 +1,5 @@
+
+
 <?php
 require "managers/ConnexionManager.php";
 
@@ -18,7 +20,10 @@ try {
     else {
 
         if($_GET['action'] == 'to-admin') {
-            require_once("view/adminView.php");
+             require_once("view/adminView.php");
+            // require_once("view/connexion.php");
+            
+
         }
 
         else if($_GET['action'] == 'ajouter') {

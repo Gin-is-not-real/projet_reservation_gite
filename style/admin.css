@@ -1,4 +1,14 @@
-
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main > header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+}
 #admin-container * {
     /* border: 1px solid black; */
 }
@@ -30,13 +40,18 @@
 
 .form-admin-content {
     margin: 2%;
+    
 }
+/* .form-admin #form-admin-add{
+    text-align: center;
+} */
 .form-admin-content>div {
     /* background-color: crimson; */
      display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 2%;
+    
 }
 
 #admin-edit-section>form {
