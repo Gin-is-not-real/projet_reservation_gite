@@ -15,7 +15,7 @@ function getConnectionInformations() {
     else {
         $conInfos = [
             'hostname' => 'promo-72.codeur.online',
-            'basename' => 'ninap_bases',
+            'basename' => 'ninap_gites',
             'username' => 'ninap',
             'password' => 'pXvu3qcH1Ry83Q==',
         ];
@@ -23,10 +23,10 @@ function getConnectionInformations() {
     return $conInfos;
 }
 
-$GLOBALS["hostname"]= "localhost";
-$GLOBALS["username"]= "root";
-$GLOBALS["password"]= '';
-$GLOBALS["basename"]= "projet_gites";
+// $GLOBALS["hostname"]= "localhost";
+// $GLOBALS["username"]= "root";
+// $GLOBALS["password"]= '';
+// $GLOBALS["basename"]= "projet_gites";
 $GLOBALS["tablename"]= "hebergements";
 $GLOBALS["tablenameresa"]= "reservations";
 
