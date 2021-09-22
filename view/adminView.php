@@ -12,16 +12,14 @@
 </head>
 
 <body>
-    <header>
-        <h3>Admin Interface</h3>
-    </header>
+
     <main>
         <header>
             <div class="a-adminer" id="go-admin">
                 <a href="index.php">Retour</a>
             </div>
   
-            <!-- <h1>Admin Interface</h1> -->
+            <h1>Admin Interface</h1>
 
             <div class="deco a-adminer">
             <a href="view/deconnexion.php"> deconnection </a>

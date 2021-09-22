@@ -1,7 +1,27 @@
-
-
 <?php
 require "managers/ConnexionManager.php";
+
+$GLOBALS = !empty($GLOBALS['hostname']) ? $GLOBALS : getConnectionInformations();
+
+function getConnectionInformations() {
+    if($_SERVER['HTTP_HOST'] == 'localhost') {
+        $conInfos = [
+            'hostname' => 'localhost',
+            'basename' => 'projet_gites',
+            'username' => 'admin',
+            'password' => 'admin',
+        ];
+    }
+    else {
+        $conInfos = [
+            'hostname' => 'promo-72.codeur.online',
+            'basename' => 'ninap_bases',
+            'username' => 'ninap',
+            'password' => 'pXvu3qcH1Ry83Q==',
+        ];
+    }
+    return $conInfos;
+}
 
 $GLOBALS["hostname"]= "localhost";
 $GLOBALS["username"]= "root";
