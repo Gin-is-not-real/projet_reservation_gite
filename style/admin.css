@@ -14,9 +14,7 @@ flex-direction: row;
 justify-content: space-between;
 width: 100%;
 }
-#admin-container * {
-    /* border: 1px solid black; */
-}
+
 #admin-container {
     width: 100vw;
     max-width: 500px;
@@ -47,11 +45,8 @@ width: 100%;
     margin: 2%;
     
 }
-/* .form-admin #form-admin-add{
-    text-align: center;
-} */
+
 .form-admin-content>div {
-    /* background-color: crimson; */
      display: flex;
     flex-direction: row;
     justify-content: space-between;

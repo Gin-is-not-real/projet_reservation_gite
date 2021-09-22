@@ -37,16 +37,16 @@ class ConnexionManager {
     public function getbasename() {
         return $this->getbasename;
     }
-    public function setHostname() {
+    public function setHostname($hostname) {
         $this->hostname=$hostname;
     }
-    public function setUsername() {
+    public function setUsername($username) {
         $this->username=$username;
     }
-    public function setPassword() {
+    public function setPassword($password) {
         $this->password=$password;
     }
-    public function setbasename() {
+    public function setbasename($basename) {
         $this->basename=$basename;
     }
 }
@@ -189,7 +189,7 @@ class HebergementManager extends ConnexionManager {
     public function getTablename() {
         return $this->tablename;
     }
-    public function setTablename() {
+    public function setTablename($tablename) {
         $this->tablename=$tablename;
     }
 }
@@ -224,10 +224,6 @@ class ReservationsManager extends ConnexionManager {
     }
 
     public function addReservation($idHebergement, $dateOccupation, $dateLiberation, $clientMail) {
-    // public function addReservation($data) {
-
-
-
         try {
             $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation, client_mail) VALUES (:id_hebergement, :date_occupation, :date_liberation, :client_mail)");
             $reponse = $req->execute(array(
@@ -236,14 +232,6 @@ class ReservationsManager extends ConnexionManager {
                 "date_liberation" => $dateLiberation,
                 "client_mail" => $clientMail
             ));
-
-            // $req = $this->dbPDO->prepare("INSERT INTO $this->tablename (id_hebergement, date_occupation, date_liberation, client_mail) VALUES (:id_hebergement, :date_occupation, :date_liberation, :client_mail)");
-            // $reponse = $req->execute(array(
-            //     "id_hebergement" => $data['id_hebergement'],
-            //     "date_occupation" => $data['date_occupation'],
-            //     "date_liberation" => $data['date_liberation'],
-            //     "client_mail" => $data['client_mail']
-            // ));
         }
         catch (Exception $e) {
             die('erreur on add: ' . $e->getMessage() );
@@ -274,7 +262,7 @@ class ReservationsManager extends ConnexionManager {
     public function getTablenameresa() {
         return $this->tablename;
     }
-    public function setTablenameresa() {
+    public function setTablenameresa($tablename) {
         $this->tablename=$tablename;
     }
 }
